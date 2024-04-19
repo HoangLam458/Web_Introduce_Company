@@ -12,7 +12,7 @@
 
 input {
 	outline:  none !important;
-	border-radius: 0 !important;	 
+	border-radius: 0 !important;
 }
 
 
@@ -156,7 +156,7 @@ a {
 }
 
 a:hover {
-	color: #a2cac2;	
+	color: #a2cac2;
 }
 
 
@@ -207,7 +207,7 @@ a.btn:hover {
 .fleft {
 	float: left;
 	margin-right: 20px;
-	margin-top: 5px;	
+	margin-top: 5px;
 	margin-bottom: 0px;
 }
 
@@ -283,7 +283,7 @@ h1 a {
 }
 
 h1 a img {
-	display: block;	
+	display: block;
 }
 
 .slogan {
@@ -669,8 +669,8 @@ footer {
 	padding: 55px 0 70px;
 	display: block;
 	text-align: center;
-	font-size: 12px;
-	line-height: 14px;
+	font-size: 15px;
+	line-height: 20px;
 }
 
 footer a:hover {
