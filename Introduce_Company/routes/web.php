@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Product_Type;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('index');
 })->name('home');
@@ -17,7 +19,7 @@ Route::get('/projects', function () {
 Route::get('/contacts', function () {
     return view('contacts');
 })->name('contacts');
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/product', [ProductTypeController::class, 'index'])->name('product');
+Route::get('/list-product/{id?}', [ProductController::class, 'list'])->name('list');
+
 

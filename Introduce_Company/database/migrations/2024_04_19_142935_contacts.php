@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_type', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('type');
-            $table->integer('sta');
+            $table->string('email');
+            $table->string('description');
+            $table->integer('status');
         });
     }
 

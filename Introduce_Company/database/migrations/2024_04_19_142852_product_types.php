@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product', function (Blueprint $table) {
+        Schema::create('product_types', function (Blueprint $table) {
             $table->id();
-            $table->integer('prt_id');
             $table->string('name');
-            $table->string('des');
-            $table->decimal('price');
-            $table->integer('sta');
+            $table->string('description');
+            $table->tinyInteger('type')->default(1)->comment('1 - Sản phẩm xây dựng, 2 - Sản phẩm nội thất');
+            $table->integer('status');
         });
     }
 

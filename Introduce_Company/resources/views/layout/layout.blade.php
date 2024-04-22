@@ -12,10 +12,13 @@
         <link rel="stylesheet" href="{{ asset('Theme_css/css/slider.css')}}">
         <link rel="stylesheet" href="{{ asset('css/list.css')}}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"/>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet" id="bootstrap-css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet" id="bootstrap-css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" id="bootstrap-css">
+
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -69,7 +72,7 @@
 							<ul>
 								<li class="current bt-icon"><a href="{{route('home')}}">Trang chủ</a></li>
 								<li class="bt-icon"><a href="{{route('services')}}">Dịch vụ</a></li>
-                                <li class="bt-icon"><a href="{{route('blog')}}">Sản phẩm</a></li>
+                                <li class="bt-icon"><a href="{{route('product')}}">Sản phẩm</a></li>
 								<li class="bt-icon"><a href="{{route('projects')}}">Dự án</a></li>
 								<li class="bt-icon"><a href="{{route('contacts')}}">Liên hệ</a></li>
                                 <li class="bt-icon"><a href="{{route('about')}}">Về chúng tôi</a></li>
@@ -102,7 +105,7 @@
                 <ul>
                     <li class="current bt-icon"><a href="{{route('home')}}">Trang chủ</a></li>
 								<li class="bt-icon"><a href="{{route('services')}}">Dịch vụ</a></li>
-                                <li class="bt-icon"><a href="{{route('blog')}}">Sản phẩm</a></li>
+                                <li class="bt-icon"><a href="{{route('product')}}">Sản phẩm</a></li>
 								<li class="bt-icon"><a href="{{route('projects')}}">Dự án</a></li>
 								<li class="bt-icon"><a href="{{route('contacts')}}">Liên hệ</a></li>
                                 <li class="bt-icon"><a href="{{route('about')}}">Về chúng tôi</a></li>
