@@ -10,7 +10,7 @@
 				<div class="grid_12">
 					<div class="map">
 						<figure class="">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.953208188769!2d106.6808738528469!3d10.792052662167821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529658f3e45e9%3A0x35bc16eba2db9a6f!2sChung%20c%C6%B0%20Novaland!5e0!3m2!1svi!2s!4v1714009806850!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>						</figure>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.953208188769!2d106.6808738528469!3d10.792052662167821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529658f3e45e9%3A0x35bc16eba2db9a6f!2sChung%20c%C6%B0%20Novaland!5e0!3m2!1svi!2s!4v1714009806850!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>						</figure>
 					</div>
 				</div>
 				<div class="grid_4">
