@@ -92,10 +92,20 @@ hr{
 
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
-                <div class="container-fluid d-flex" >
+                <div class="container-fluid justify-content-center" >
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    {{-- @if ( $type->type == 1 )
                         <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vật liệu xây dựng</a> </li>
-                        <li class="nav-item" role="presentation"> <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Nội thất</a> </li>
+                    @else
+                        <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Nội thất</a> </li>
+
+                    @endif --}}
+                    @foreach ($type2 as $t1)
+                                            <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{{$t1->name}}</a> </li>
+
+                    @endforeach
+                        {{-- <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vật liệu xây dựng</a> </li> --}}
+                        {{-- <li class="nav-item" role="presentation"> <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Nội thất</a> </li> --}}
                     </ul>
                 </div>
             </nav>
@@ -104,24 +114,32 @@ hr{
             <div class="products">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span class="font-weight-bold text-uppercase">Vật liệu xây dựng</span>
+                        <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center">
+                         {{-- @if ( $type->type == 1 )
+                          <span class="font-weight-bold text-uppercase">Vật liệu xây dựng</span>
+                    @else
+                         <span class="font-weight-bold text-uppercase">Nội thất</span>
+
+                    @endif --}}
+
                         </div>
                         <div class="row g-3">
                             @foreach ($pr1 as $p1 )
                             <div class="col-md-4">
                                 <div class="card">
-                                    <a href="#"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
+                                    <a href="{{route('show',$p1->id)}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p1->name}}</span>
                                         {{-- <span class="font-weight-bold">$550</span> --}}
                                     </div>
 
-                                        <p class="card-text mb-1 mt-1">{{$p1->des}}</p>
+                                        <p class="card-text mb-1 mt-1">{{$p1->description}}</p>
                                     </div>
                                     <hr>
-                                    {{-- <div class="card-body">
-                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <button class="btn btn-dark">Add to cart</button> </div>
-                                    </div> --}}
+                                    <div class="card-body">
+                                        {{-- <div class="text-right buttons"> <button class="btn btn-outline-dark">Xem chi tiết</button> <button class="btn btn-dark">Liên hệ</button> </div> --}}
+                                    </div>
+
                                 </div>
                             </div>
                             @endforeach
@@ -133,24 +151,24 @@ hr{
                         <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span class="font-weight-bold text-uppercase">Nội thất</span>
                         </div>
                         <div class="row g-3">
-                            @foreach ($pr2 as $p2 )
+                            {{-- @foreach ($pr2 as $p2 )
                             <div class="col-md-4">
                                 <div class="card">
                                 <a href="#"> <img src="{{ asset('img/2.jpg')}}" class="card-img-top"></a>
 
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p2->name}}</span>
-                                            {{-- <span class="font-weight-bold">$450</span> --}}
+                                            {<span class="font-weight-bold">$450</span>
                                          </div>
                                         <p class="card-text mb-1 mt-1">{{$p2->des}}</p>
                                     </div>
                                     <hr>
-                                    {{-- <div class="card-body">
+                                    <div class="card-body">
                                         <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <button class="btn btn-dark">Add to cart</button> </div>
-                                    </div> --}}
+                                    </div>
                                 </div>
                             </div>
-                            @endforeach
+                            @endforeach --}}
 
                         </div>
                     </div>

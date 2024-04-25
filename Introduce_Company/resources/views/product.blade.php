@@ -111,7 +111,7 @@ hr{
                             @foreach ($pr1 as $p1 )
                             <div class="col-md-4">
                                 <div class="card">
-                                    <a href="#"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
+                                    <a href="{{route('list',$p1->id)}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p1->name}}</span>
                                         {{-- <span class="font-weight-bold">$550</span> --}}
@@ -137,7 +137,7 @@ hr{
                             @foreach ($pr2 as $p2 )
                             <div class="col-md-4">
                                 <div class="card">
-                                <a href="#"> <img src="{{ asset('img/2.jpg')}}" class="card-img-top"></a>
+                                <a href="{{route('list',$p2->id)}}"> <img src="{{ asset('img/2.jpg')}}" class="card-img-top"></a>
 
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p2->name}}</span>

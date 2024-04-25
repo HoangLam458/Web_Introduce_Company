@@ -2,7 +2,8 @@
 @section('body')
 	<body class="page1">
 <!--==============================header=================================-->
-		<div class="slider_wrapper">
+		<div class='container_1'>
+        <div class="slider_wrapper">
 			<div id="camera_wrap" class="">
 				<div data-src="{{ asset('img/1.jpg')}}"></div>
 				<div data-src="{{ asset('img/2.jpg')}}"></div>
@@ -10,6 +11,9 @@
 				<div data-src="{{ asset('img/4.jpg')}}"></div>
 			</div>
 		</div>
+        </div>
+
+
 		<div class="container_12">
 			<div class="grid_12">
 				<div class="slogan">
@@ -43,7 +47,7 @@
 					<figure>
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,262 0,0 180,0 z"/></svg>
 						<figcaption>
-						<div class="title">Dịch vụ</div>
+						<div class="title">Sản phẩm</div>
 						</figcaption>
 					</figure>
 					<span>Xem</span>

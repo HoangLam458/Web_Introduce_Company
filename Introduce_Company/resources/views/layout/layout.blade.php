@@ -67,7 +67,7 @@
                     <div> &nbsp;</div>
 
 					<div class="menu_block">
-						<nav id="bt-menu" class="bt-menu">
+						<nav id="bt-menu" class="bt-menu" >
 							<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
 							<ul>
 								<li class="current bt-icon"><a href="{{route('home')}}">Trang chủ</a></li>

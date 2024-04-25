@@ -21,5 +21,6 @@ Route::get('/contacts', function () {
 })->name('contacts');
 Route::get('/product', [ProductTypeController::class, 'index'])->name('product');
 Route::get('/list-product/{id?}', [ProductController::class, 'list'])->name('list');
+Route::get('/show-product/{id?}', [ProductController::class, 'show'])->name('show');
 
 
