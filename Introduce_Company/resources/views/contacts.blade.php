@@ -38,31 +38,53 @@
                     <div class="container contact-form">
                         <div class="contact-image">
                             <img src="{{ asset('Theme_css/images/2Q.png')}}"/>
-                        </div>
-                        <form method="post">
+						</div>
                            <div class="row">
                                 <div class="col-md-6">
+									<form action="{{ route('Storecontact') }}" class="bg-white p-5 contact-form" method="Post">
+										@csrf
+										<div class="form-group{{ $errors->has('ht') ? ' has-danger' : '' }}">
+											<input required type="text" name="ht" class="form-control" placeholder="Your Name *" value="{{old('ht')}}" maxlength="50" required />
+											@if ($errors->has('ht'))
+											<span class="invalid-feedback" style="display: block;font-size:15px" role="alert">
+												{{ $errors->first('ht') }}
+											</span>
+											@endif
+										</div>		
+										<div class="form-group{{ $errors->has('em') ? ' has-danger' : '' }}">
+											<input required type="email"  value="{{old('em')}}"class="form-control" name="em" placeholder="Your Email *" required>
+											@if ($errors->has('em'))
+											<span class="invalid-feedback" style="display: block;font-size:15px" role="alert">
+												{{ $errors->first('em') }}
+											</span>
+											@endif
+										</div>
+										<div class="form-group{{ $errors->has('td') ? ' has-danger' : '' }}">
+											<input type="text" name="td" value="{{old('td')}}" class="form-control" maxlength="50" minlength="15"
+												placeholder="Title *" required>
+											@if ($errors->has('td'))
+											<span class="invalid-feedback" style="display: block;font-size:15px" role="alert">
+												{{ $errors->first('td') }}
+											</span>
+											@endif
+										</div>
+										<div class="form-group{{ $errors->has('nd') ? ' has-danger' : '' }}">
+											<textarea name="nd" id="" cols="30" rows="7" class="form-control" minlength="50" placeholder="Nội dung"
+												required>{{old('nd')}}</textarea>
+											@if ($errors->has('nd'))
+											<span class="invalid-feedback" style="display: block;font-size:15px" role="alert">
+												{{ $errors->first('nd') }}
+											</span>
+											@endif
+										</div>
+
                                     <div class="form-group">
-                                        <input required type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                                        <input type="submit" value="Send Message" />
                                     </div>
-                                    <div class="form-group">
-                                        <input required type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input required type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
-                                    </div>
+								</form>
                                 </div>
                             </div>
-                        </form>
-            </div>
+            
 				</div>
 			</div>
 		</div>
