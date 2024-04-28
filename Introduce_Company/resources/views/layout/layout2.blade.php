@@ -57,9 +57,35 @@
             })
         </script>
 	</head>
+	<body class="page1">
+        <header>
+			<div class="container_12">
+				<div class="grid_12">
+                    <div class="center">
+                        <a href="{{route('home')}}"><img height="100" width="100" src="{{ asset('Theme_css/images/2Q.png')}}"></a>
+                    </div>
+                    <div> &nbsp;</div>
 
+					<div class="menu_block">
+						<nav id="bt-menu" class="bt-menu" >
+							<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+							<ul>
+								<li class="current bt-icon"><a href="{{route('home')}}">Trang chủ</a></li>
+								<li class="bt-icon"><a href="{{route('services')}}">Dịch vụ</a></li>
+                                <li class="bt-icon"><a href="{{route('product')}}">Sản phẩm</a></li>
+								<li class="bt-icon"><a href="{{route('projects')}}">Dự án</a></li>
+								<li class="bt-icon"><a href="{{route('contacts')}}">Liên hệ</a></li>
+                                <li class="bt-icon"><a href="{{route('about')}}">Về chúng tôi</a></li>
+							</ul>
+						</nav>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</header>
+<!--==============================header=================================-->
 @yield('body');
-
 <script>
     $(document).ready(function(){
      $(".bt-menu-trigger").toggle(

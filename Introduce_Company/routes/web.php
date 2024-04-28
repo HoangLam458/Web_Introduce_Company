@@ -4,6 +4,7 @@ use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProductController;
 use App\Mail\Contact;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProjectController;
@@ -17,10 +18,6 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('pages.login.login');
 })->name('admin');
-
-Route::post('/login', [UserController::class, 'login'])->name('login');
-Route::get('/login', [UserController::class, 'login_page'])->name('login.page');
-
 Route::get('/about', function () {
     return view('pages.contacts.about');
 })->name('about');
@@ -49,3 +46,7 @@ Route::get('/sendcontact', function(Illuminate\Http\Request $request){
     return redirect()->route('contacts');
   })->name('sendcontact');
 
+
+Auth::routes();
+//admin
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
