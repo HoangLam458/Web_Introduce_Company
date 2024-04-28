@@ -113,7 +113,7 @@ hr{
                         <div class="row g-3">
                             <div class="col-md-4">
                                 <div class="card">
-                                    <a href=""> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
+                                    <a href="{{route('admin.product')}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Trang quản trị sản phẩm</span>
 

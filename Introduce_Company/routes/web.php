@@ -50,3 +50,7 @@ Route::get('/sendcontact', function(Illuminate\Http\Request $request){
 Auth::routes();
 //admin
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/admin/product', [App\Http\Controllers\ProductTypeController::class, 'adminShow'])->name('admin.product');
+Route::get('/admin/product/{id?}', [App\Http\Controllers\ProductController::class, 'adminShowList'])->name('admin.product.list');
+Route::get('/admin/product/detail/{id?}', [ProductController::class, 'details'])->name('details');
