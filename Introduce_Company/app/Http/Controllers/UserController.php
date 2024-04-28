@@ -3,15 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function login(Request $request)
     {
-        //
+        $password = Hash::make($request->input("password"));
+        dd($password);
+      $user = DB::table("users")->where("email", $request->email)
+      ->where("password",$password )->first();
+      dd($user);
+      if ($user!=null) {
+        return;
+      }
+      return redirect()->route('admin');
+    }
+    public function login_page(Request $request)
+    {
+
+        return view('pages.admin.admin');
+
     }
 
     /**
@@ -19,7 +35,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
