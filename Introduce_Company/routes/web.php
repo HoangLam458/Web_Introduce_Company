@@ -49,8 +49,11 @@ Route::get('/sendcontact', function(Illuminate\Http\Request $request){
 
 Auth::routes();
 //admin
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
 Route::get('/admin/product', [App\Http\Controllers\ProductTypeController::class, 'adminShow'])->name('admin.product');
 Route::get('/admin/product/{id?}', [App\Http\Controllers\ProductController::class, 'adminShowList'])->name('admin.product.list');
-Route::get('/admin/product/detail/{id?}', [ProductController::class, 'details'])->name('details');
+Route::get('/admin/product/detail/{id?}', [ProductController::class, 'details'])->name('product.details');
+Route::post('/admin/product/update/{id?}', [ProductController::class, 'update'])->name('product.update');
+Route::get('/admin/product/delete/{id?}', [ProductController::class, 'delete'])->name('product.delete');
+
+Route::post('/admin/product/', [ProductTypeController::class, 'store'])->name('productType.store');

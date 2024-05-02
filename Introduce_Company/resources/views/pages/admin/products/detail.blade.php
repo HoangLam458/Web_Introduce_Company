@@ -98,7 +98,10 @@ label.radio input:checked+span {
             </div>
             <div class="d-flex align-items-center"></i><span class="ml-1">{{$p1->description}}<br></span></div>
            <hr>
-            <div class="mt-3"><button class="btn btn-primary" type="button">Liên hệ để được tư vẫn và hỗ trợ</button></div>
+            <div class="mt-3">
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Chỉnh sửa</button>
+                <a class="btn-danger" type="button" onclick="return checkDelete()" href="{{route('product.delete',$p1->id)}}">Xóa</a>
+            </div>
         </div>
         @endforeach
 
@@ -106,4 +109,54 @@ label.radio input:checked+span {
     </div>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa sản phẩm: {{$p1->name}} </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{{route('product.update',$p1->id)}}" method="POST" class="form"
+            enctype="multipart/form-data" >
+            @csrf
+            <div class="form-group">
+              <label for="name" class="col-form-label">Tên sản phẩm:</label>
+              <input type="text" required class="form-control" name="name" id="name"  value="{{$p1->name}} ">
+            </div>
+            <div class="form-group">
+                <label for="price" class="col-form-label">Giá:</label>
+                <input type="text" required class="form-control" name="price" id="price" value="{{$p1->price}}">
+              </div>
+            <div class="form-group">
+                <div class="custom-file">
+                <label class="custom-file-label" for="inputGroupFile01">Ảnh: </label>
+                <input type="file" class="form-control" id="inputGroupFile01" name="img">
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="description" class="col-form-label">Description:</label>
+              <textarea class="form-control" required name="description" id="description">{{$p1->description}}</textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                <button onclick="location.reload();" type="reset"
+                class="btn btn-warning me-1 mb-1">Nhập lại thông tin</button>
+                <button type="submit" class="btn btn-primary">Xác nhận</button>
+              </div>
+          </form>
+
+
+    </div>
+</div>
+  </div>
+  <header>
+    <script language="JavaScript" type="text/javascript">
+        function checkDelete() {
+            return confirm('Bạn có chắc chắn muốn xóa?');
+        }
+    </script>
+</header>
 @endsection

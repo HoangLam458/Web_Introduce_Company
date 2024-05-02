@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>TMC Group</title>
+		<title>TMC Group - Adminstrator</title>
         <link rel="icon" type="image/png" href="{{ asset('Theme_css/images/2Q.png')}}">
 		<link rel="shortcut icon" href="{{ asset('Theme_css/images/2Q.png')}}">
 		<link rel="stylesheet" href="{{ asset('Theme_css/css/camera.css')}}">
@@ -72,7 +72,7 @@
 							<ul>
 								<li class="current bt-icon"><a href="{{route('home')}}">Trang chủ</a></li>
 								<li class="bt-icon"><a href="{{route('services')}}">Dịch vụ</a></li>
-                                <li class="bt-icon"><a href="{{route('product')}}">Sản phẩm</a></li>
+                                <li class="bt-icon"><a href="{{route('admin.product')}}">Sản phẩm</a></li>
 								<li class="bt-icon"><a href="{{route('projects')}}">Dự án</a></li>
 								<li class="bt-icon"><a href="{{route('contacts')}}">Liên hệ</a></li>
                                 <li class="bt-icon"><a href="{{route('about')}}">Về chúng tôi</a></li>

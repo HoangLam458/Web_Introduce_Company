@@ -129,7 +129,7 @@ a .ar{
                             @foreach ($pr1 as $p1 )
                             <div class="col-md-4">
                                 <div class="card">
-                                    <a href="{{route('details',$p1->id)}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
+                                    <a href="{{route('product.details',$p1->id)}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p1->name}}</span>
                                         {{-- <span class="font-weight-bold">$550</span> --}}
@@ -140,9 +140,8 @@ a .ar{
                                     <hr>
                                     <div class="card-body">
                                         <div class="text-right buttons">
-                                            <button class="btn btn-primary" onclick="location.href='{{route('details',$p1->id)}}'">Xem chi tiết</button>
-                                            <button class="btn btn-warning">Chỉnh sửa</button>
-                                            <button class="btn btn-danger">Xóa</button>
+                                            <a class="btn-primary" type="button" onclick="location.href='{{route('product.details',$p1->id)}}'">Xem chi tiết</a>
+                                            <a class="btn-danger" type="button" onclick="return checkDelete()" href="{{route('product.delete',$p1->id)}}">Xóa</a>
                                         </div>
                                     </div>
 
@@ -155,4 +154,11 @@ a .ar{
                 </div>
             </div>
         </div>
+        <header>
+            <script language="JavaScript" type="text/javascript">
+                function checkDelete() {
+                    return confirm('Bạn có chắc chắn muốn xóa?');
+                }
+            </script>
+        </header>
 @endsection
