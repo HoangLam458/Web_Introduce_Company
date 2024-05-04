@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\ServiceProvider;
 return [
 
     /*
@@ -66,6 +67,7 @@ return [
     */
 
     'timezone' => env('APP_TIMEZONE', 'UTC'),
+    'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -122,5 +124,8 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
-
+    'aliases' => Facade::defaultAliases()->merge([
+        // 'Example' => App\Facades\Example::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+    ])->toArray(),
 ];

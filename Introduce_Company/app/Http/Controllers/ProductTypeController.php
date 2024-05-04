@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductTypeRequest;
-use App\Models\Product_Type;
+use App\Models\Product;
+use App\Models\ProductType;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -31,6 +32,19 @@ class ProductTypeController extends Controller
             'type' => $request['type'],
             'status' => 1
         ]);
-        return redirect()->route('admin.product')->with('status','Thêm loại bánh thành công');
+        return redirect()->route('admin.product')->with('status','Thành công!');
+    }
+    public function delete($id)
+    {
+        {
+            $user = ProductType::find($id);
+            $pro = Product::where('product_type_id', $id)->get();
+            if ($pro->count() < 1)
+            {
+                $user->delete();
+                return redirect()->route('admin.product')->with('status','Thành công!');
+            }
+            return redirect()->route('admin');
+        }
     }
 }

@@ -55,5 +55,7 @@ Route::get('/admin/product/{id?}', [App\Http\Controllers\ProductController::clas
 Route::get('/admin/product/detail/{id?}', [ProductController::class, 'details'])->name('product.details');
 Route::post('/admin/product/update/{id?}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/admin/product/delete/{id?}', [ProductController::class, 'delete'])->name('product.delete');
+Route::post('/admin/product/create', [ProductController::class, 'create'])->name('product.store');
 
 Route::post('/admin/product/', [ProductTypeController::class, 'store'])->name('productType.store');
+Route::get('/admin/product1/delete/{id?}', [ProductTypeController::class, 'delete'])->name('productT.delete');

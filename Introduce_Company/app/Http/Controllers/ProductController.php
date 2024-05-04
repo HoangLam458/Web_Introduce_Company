@@ -3,36 +3,38 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateProductRequest;
+use App\Http\Requests\StoreProductRequest;
 use App\Models\Product;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+
 class ProductController extends Controller
 {
     public function list($id)
     {
-       $product = DB::table("products")->where("product_type_id", $id)->get();
-       $type = DB::table("product_types")->where("id", $id)->first("type");
+        $product = DB::table("products")->where("product_type_id", $id)->get();
+        $type = DB::table("product_types")->where("id", $id)->first("type");
         $type2 = DB::table("product_types")->where("id", $id)->get();
-       return view('pages.products.list_product',['pr1'=>$product,'type'=>$type,'type2'=>$type2]);
+        return view('pages.products.list_product', ['pr1' => $product, 'type' => $type, 'type2' => $type2]);
     }
     public function show($id)
     {
-        $product = DB::table('products')->where('id',$id)->get();
-        return view('pages.products.show_product',['pr1'=>$product,]);
+        $product = DB::table('products')->where('id', $id)->get();
+        return view('pages.products.show_product', ['pr1' => $product,]);
     }
     public function adminShowList($id)
     {
-       $product = DB::table("products")->where("product_type_id", $id)->get();
-       $type = DB::table("product_types")->where("id", $id)->first("type");
+        $product = DB::table("products")->where("product_type_id", $id)->get();
+        $type = DB::table("product_types")->where("id", $id)->first("type");
         $type2 = DB::table("product_types")->where("id", $id)->get();
-       return view('pages.admin.products.show',['pr1'=>$product,'type'=>$type,'type2'=>$type2]);
+        return view('pages.admin.products.show', ['pr1' => $product, 'type' => $type, 'type2' => $type2]);
     }
     public function details($id)
     {
-        $product = DB::table('products')->where('id',$id)->get();
-        return view('pages.admin.products.detail',['pr1'=>$product,]);
+        $product = DB::table('products')->where('id', $id)->get();
+        return view('pages.admin.products.detail', ['pr1' => $product,]);
     }
     public function update(UpdateProductRequest $request, $id)
     {
@@ -74,12 +76,32 @@ class ProductController extends Controller
         return redirect()->back();
     }
     public function delete($id)
-    {
-        {
+    { {
             $user = Product::find($id);
-            $type = ProductType::where('id',$user->product_type_id)->first();
+            $type = ProductType::where('id', $user->product_type_id)->first();
             $user->delete();
-            return redirect()->route('admin.product.list',$type->id);
+            return redirect()->route('admin.product.list', $type->id)->with('status', 'Xóa thành công!');
         }
+    }
+    public function create(StoreProductRequest $request, $id)
+    {
+        $sanphams = new Product;
+        $sanphams->name = $request->input('name');
+        $sanphams->description = $request->input('description');
+        $sanphams->price = $request->input('price');
+        $sanphams->product_type_id = $id;
+        $sanphams->status = 1;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('images/', $filename);
+            $sanphams->img = $filename;
+        }
+        if ($request->hasFile('image') == null) {
+            $sanphams->img = 'Default.jpg';
+        }
+        $sanphams->save();
+        return redirect()->back()->with('status', 'Thêm bánh thành công');
     }
 }

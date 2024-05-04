@@ -1,5 +1,6 @@
 @extends('layout.layout2')
 @section('body')
+@include('sweetalert::alert')
 
     <head>
         <style>
@@ -88,8 +89,10 @@
             }
         </style>
     </head>
-
-
+    @if (session('status'))
+    <h6 class="alert alert-success">{{ session('status') }} <button class="close"
+            data-dismiss="alert">&times;</button></h6>
+    @endif
 
     <div class="container-fluid px-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
@@ -131,8 +134,8 @@
                                     <hr>
                                     <div class="card-body">
                                         <div class="text-right buttons">
-                                            <button class="btn btn-outline-dark" onclick="location.href='{{route('admin.product.list',$p1->id)}}'">Xem</button>
-                                            <button class="btn btn-dark">Xóa</button>
+                                            <a class="btn btn-outline-dark" onclick="location.href='{{route('admin.product.list',$p1->id)}}'">Xem</a>
+                                            <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('productT.delete',$p1->id)}}">Xóa</a>
                                         </div>
                                     </div>
                                 </div>
@@ -163,8 +166,8 @@
                                     <hr>
                                     <div class="card-body">
                                         <div class="text-right buttons">
-                                            <button class="btn btn-outline-dark" onclick="location.href='{{route('admin.product.list',$p1->id)}}'">Xem</button>
-                                            <button class="btn btn-dark">Xóa</button>
+                                            <a class="btn btn-outline-dark" onclick="location.href='{{route('admin.product.list',$p2->id)}}'">Xem</a>
+                                            <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('productT.delete',$p2->id)}}">Xóa</a>
                                         </div>
                                     </div>
                                 </div>
@@ -204,7 +207,6 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                             <button onclick="location.reload();" type="reset"
                             class="btn btn-warning me-1 mb-1">Nhập lại thông tin</button>
                             <button type="submit" class="btn btn-primary">Xác nhận</button>
@@ -214,4 +216,11 @@
             </div>
         </div>
     </div>
+    <header>
+        <script language="JavaScript" type="text/javascript">
+            function checkDelete() {
+                return confirm('Bạn có chắc chắn muốn xóa?');
+            }
+        </script>
+    </header>
 @endsection

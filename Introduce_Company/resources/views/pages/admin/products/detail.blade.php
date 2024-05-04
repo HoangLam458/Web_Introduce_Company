@@ -1,5 +1,6 @@
 @extends('layout.layout2')
 @section('body')
+@include('sweetalert::alert')
 <head>
     <style>
 
@@ -65,6 +66,10 @@ label.radio input:checked+span {
     </style>
 </head>
     <div class="container_12 justify-content-center">
+        @if (session('status'))
+        <h6 class="alert alert-success">{{ session('status') }} <button class="close"
+                data-dismiss="alert">&times;</button></h6>
+        @endif
         <div class="row">
         @foreach ($pr1 as $p1)
         <div class="col-md-12">
@@ -83,7 +88,11 @@ label.radio input:checked+span {
             </div>
         </div>
         <div class="col-md-12">
-            <h4>{{$p1->name}}</h4>
+             <h4>{{$p1->name}}</h4>
+             <div class="mt-3">
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Chỉnh sửa</button>
+                <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('product.delete',$p1->id)}}">Xóa</a>
+            </div>
                 <div class="price">
                 @if ($p1->price == 0)
                  <span class="mr-2" style="color: red;"></i>
@@ -98,10 +107,7 @@ label.radio input:checked+span {
             </div>
             <div class="d-flex align-items-center"></i><span class="ml-1">{{$p1->description}}<br></span></div>
            <hr>
-            <div class="mt-3">
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Chỉnh sửa</button>
-                <a class="btn-danger" type="button" onclick="return checkDelete()" href="{{route('product.delete',$p1->id)}}">Xóa</a>
-            </div>
+
         </div>
         @endforeach
 
