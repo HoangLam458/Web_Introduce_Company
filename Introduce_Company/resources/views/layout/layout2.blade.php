@@ -71,10 +71,10 @@
 						<nav id="bt-menu" class="bt-menu" >
 							<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
 							<ul>
-								<li class="current bt-icon"><a href="{{route('home')}}">Trang chủ</a></li>
-								<li class="bt-icon"><a href="{{route('services')}}">Dịch vụ</a></li>
+								<li class="current bt-icon"><a href="{{route('admin')}}">Trang chủ</a></li>
+								<li class="bt-icon"><a href="{{route('admin.serv')}}">Dịch vụ</a></li>
                                 <li class="bt-icon"><a href="{{route('admin.product')}}">Sản phẩm</a></li>
-								<li class="bt-icon"><a href="{{route('projects')}}">Dự án</a></li>
+								<li class="bt-icon"><a href="{{route('admin.proj')}}">Dự án</a></li>
 								<li class="bt-icon"><a href="{{route('contacts')}}">Liên hệ</a></li>
                                 <li class="bt-icon"><a href="{{route('about')}}">Về chúng tôi</a></li>
 							</ul>

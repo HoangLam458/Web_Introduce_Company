@@ -22,14 +22,14 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = DB::table('products')->where('id', $id)->get();
-        return view('pages.products.show_product', ['pr1' => $product,]);
+        return view('pages.products.show_product', ['pr1' => $product]);
     }
     public function adminShowList($id)
     {
         $product = DB::table("products")->where("product_type_id", $id)->get();
         $type = DB::table("product_types")->where("id", $id)->first("type");
         $type2 = DB::table("product_types")->where("id", $id)->get();
-        return view('pages.admin.products.show', ['pr1' => $product, 'type' => $type, 'type2' => $type2]);
+        return view('pages.admin.products.show', ['pr1' => $product, 'type' => $type, 'type2' => $type2,'pTid'=>$id]);
     }
     public function details($id)
     {
@@ -76,12 +76,12 @@ class ProductController extends Controller
         return redirect()->back();
     }
     public function delete($id)
-    { {
+    {
             $user = Product::find($id);
             $type = ProductType::where('id', $user->product_type_id)->first();
             $user->delete();
             return redirect()->route('admin.product.list', $type->id)->with('status', 'Xóa thành công!');
-        }
+
     }
     public function create(StoreProductRequest $request, $id)
     {
@@ -102,6 +102,6 @@ class ProductController extends Controller
             $sanphams->img = 'Default.jpg';
         }
         $sanphams->save();
-        return redirect()->back()->with('status', 'Thêm bánh thành công');
+        return redirect()->back()->with('status', 'Thêm sản phẩm thành công');
     }
 }

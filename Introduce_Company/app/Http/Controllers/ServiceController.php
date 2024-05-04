@@ -16,4 +16,14 @@ class ServiceController extends Controller
         $products1 = DB::table("services")->where("id","=",$id)->get();
         return view('pages.services.services_show',['pr1'=>$products1]);
     }
+    public function adminindex()
+    {
+        $products1 = DB::table("services")->get();
+        return view('pages.admin.services.services',['pr1'=>$products1]);
+    }
+    public function adminshow($id)
+    {
+        $products1 = DB::table("services")->where("id","=",$id)->get();
+        return view('pages.services.services_show',['pr1'=>$products1]);
+    }
 }

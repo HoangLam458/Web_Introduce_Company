@@ -133,6 +133,9 @@
                     </div>
                     <div class="row g-3">
                         @if ($pr1->count() > 0)
+                        <div class="row-md-6" style="margin-top: 1px">
+                            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal"> Thêm sản phẩm mới </button>
+                        </div>
                         @foreach ($pr1 as $p1)
                         <div class="col-md-4">
                             <div class="card">
@@ -194,7 +197,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="" method="POST" class="form"
+              <form action="{{route('product.store',$pTid)}}" method="POST" class="form"
                 enctype="multipart/form-data" >
                 @csrf
                 <div class="form-group">
@@ -204,6 +207,7 @@
                 <div class="form-group">
                     <label for="price" class="col-form-label">Giá:</label>
                     <input type="text" required class="form-control" name="price" id="price" >
+
                   </div>
                 <div class="form-group">
                     <div class="custom-file">
@@ -217,13 +221,18 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button onclick="location.reload();" type="reset"
-                    class="btn btn-warning me-1 mb-1">Nhập lại thông tin</button>
-                    <button type="submit" class="btn btn-primary">Xác nhận</button>
+                    <button type="submit" onclick="return checkDelete()" class="btn btn-primary" >Xác nhận</button>
                   </div>
               </form>
 
 
         </div>
     </div>
+    <header>
+        <script language="JavaScript" type="text/javascript">
+            function checkDelete() {
+                return confirm('Bạn có chắc chắn muốn tạo sản phẩm này?');
+            }
+        </script>
+    </header>
 @endsection

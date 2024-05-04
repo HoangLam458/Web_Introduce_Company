@@ -130,13 +130,13 @@ hr{
                             </div>
                             <div class="col-md-4">
                                 <div class="card">
-                                    <a href=""> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
+                                    <a href="{{route('admin.proj')}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Trang quản trị sản phẩm</span>
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Trang quản trị dự án</span>
 
                                     </div>
 
-                                        <p class="card-text mb-1 mt-1"> Thêm, xóa, sửa sản phẩm</p>
+                                        <p class="card-text mb-1 mt-1"> Thêm, xóa, sửa dự án</p>
                                     </div>
                                     <hr>
                                     <div class="card-body">
@@ -147,13 +147,13 @@ hr{
                             </div>
                             <div class="col-md-4">
                                 <div class="card">
-                                    <a href=""> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
+                                    <a href="{{route('admin.serv')}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Trang quản trị sản phẩm</span>
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold"> Trang quản trị dịch vụ</span>
 
                                     </div>
 
-                                        <p class="card-text mb-1 mt-1"> Thêm, xóa, sửa sản phẩm</p>
+                                        <p class="card-text mb-1 mt-1"> Thêm, xóa, sửa dịch vụ</p>
                                     </div>
                                     <hr>
                                     <div class="card-body">
