@@ -90,7 +90,7 @@ label.radio input:checked+span {
         <div class="col-md-12">
              <h4>{{$p1->name}}</h4>
              <div class="mt-3">
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Chỉnh sửa</button>
+                <button class="btn btn-primary"   type="button" data-toggle="modal" data-target="#exampleModal">Chỉnh sửa</button>
                 <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('product.delete',$p1->id)}}">Xóa</a>
             </div>
                 <div class="price">
@@ -113,7 +113,7 @@ label.radio input:checked+span {
 
 
     </div>
-</div>
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -150,7 +150,7 @@ label.radio input:checked+span {
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                 <button onclick="location.reload();" type="reset"
                 class="btn btn-warning me-1 mb-1">Nhập lại thông tin</button>
-                <button type="submit" class="btn btn-primary">Xác nhận</button>
+                <button type="submit" onclick="return checkUpdate()" class="btn btn-primary">Xác nhận</button>
               </div>
           </form>
 

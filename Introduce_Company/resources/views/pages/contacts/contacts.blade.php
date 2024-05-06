@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @section('body')
-
+@include('sweetalert::alert')
 
 
     <div class="container_12">
@@ -20,6 +20,10 @@
                     </figure>
                 </div>
             </div>
+            @if (session('status'))
+            <h6 class="alert alert-success">{{ session('status') }} <button class="close"
+                    data-dismiss="alert">&times;</button></h6>
+            @endif
             <div class="grid_4">
                 <h2 class="head1">Địa chỉ</h2>
                 <div class="map">

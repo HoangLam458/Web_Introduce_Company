@@ -32,7 +32,7 @@ class ProductTypeController extends Controller
             'type' => $request['type'],
             'status' => 1
         ]);
-        return redirect()->route('admin.product')->with('status','Thành công!');
+        return redirect()->route('admin.product')->with('status','Thêm loại sản phẩm '. $request->name.' thành công!');
     }
     public function delete($id)
     {
@@ -42,7 +42,7 @@ class ProductTypeController extends Controller
             if ($pro->count() < 1)
             {
                 $user->delete();
-                return redirect()->route('admin.product')->with('status','Thành công!');
+                return redirect()->route('admin.product')->with('status','Xóa loại sản phẩm '. $user->name.' thành công!');
             }
             return redirect()->route('admin');
         }

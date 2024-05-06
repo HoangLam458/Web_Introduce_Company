@@ -89,10 +89,6 @@
             }
         </style>
     </head>
-    @if (session('status'))
-    <h6 class="alert alert-success">{{ session('status') }} <button class="close"
-            data-dismiss="alert">&times;</button></h6>
-    @endif
 
     <div class="container-fluid px-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
@@ -112,6 +108,10 @@
     </div>
     <div class="container mt-2 mb-5">
         <div class="products">
+            @if (session('status'))
+            <h6 class="alert alert-success">{{ session('status') }} <button class="close"
+                    data-dismiss="alert">&times;</button></h6>
+            @endif
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span
@@ -186,7 +186,7 @@
                         @csrf
                         <div class="form-group">
                           <label for="name" class="col-form-label">Tên loại sản phẩm:</label>
-                          <input type="text" required class="form-control" name="name" id="name"  value=" ">
+                          <input type="text" required  class="form-control" name="name" id="name">
                         </div>
                         <div class="form-group">
                             <div class="custom-file">
@@ -209,18 +209,12 @@
                         <div class="modal-footer">
                             <button onclick="location.reload();" type="reset"
                             class="btn btn-warning me-1 mb-1">Nhập lại thông tin</button>
-                            <button type="submit" class="btn btn-primary">Xác nhận</button>
+                            <button onclick="return checkConfirm()"  type="submit" class="btn btn-primary">Xác nhận</button>
                           </div>
                       </form>
                 </div>
             </div>
         </div>
     </div>
-    <header>
-        <script language="JavaScript" type="text/javascript">
-            function checkDelete() {
-                return confirm('Bạn có chắc chắn muốn xóa?');
-            }
-        </script>
-    </header>
+
 @endsection

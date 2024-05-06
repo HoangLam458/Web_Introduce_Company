@@ -1,5 +1,6 @@
 @extends('layout.layout2')
 @section('body')
+@include('sweetalert::alert')
 
     <head>
         <style>
@@ -94,80 +95,51 @@
             <div class="container-fluid justify-content-center">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab"
-                            href="#home" role="tab" aria-controls="home" aria-selected="true">Các dịch vụ</a> </li>
-                    <li class="nav-item" role="presentation"> <a class="nav-link" id="contact-tab" data-toggle="tab"
-                            href="#productType" role="tab" aria-controls="contact" aria-selected="false">Thêm dịch vụ
-                            mới</a> </li>
+                            href="#home" role="tab" aria-controls="home" aria-selected="true">Thư liên hệ</a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </div>
     <div class="container mt-2 mb-5">
-        @if (session('status'))
-            <h6 class="alert alert-success">{{ session('status') }}
-                <button class="close" data-dismiss="alert">&times;</button></h6>
-        @endif
         <div class="products">
+            @if (session('status'))
+            <h6 class="alert alert-success">{{ session('status') }} <button class="close"
+                    data-dismiss="alert">&times;</button></h6>
+            @endif
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span
+                            class="font-weight-bold text-uppercase">Thư liên hệ</span>
+                    </div>
                     <div class="row g-3">
                         @foreach ($pr1 as $p1)
                             <div class="col-md-4">
                                 <div class="card">
-                                    <a href="{{ route('admin.serv.show', $p1->id) }}"> <img src="{{ asset('img/1.jpg') }}"
+                                    <a href="{{route('admin.contact.show',$p1->id)}}"> <img src="{{ asset('img/1.jpg') }}"
                                             class="card-img-top"></a>
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between"> <span
-                                                class="font-weight-bold">{{ $p1->name }}</span>
+                                                class="font-weight-bold">{{ $p1->title }}</span>
                                             {{-- <span class="font-weight-bold">$550</span> --}}
                                         </div>
+                                        <p class="card-text mb-1 mt-1">Tên người gửi: {{ $p1->name }}</p>
 
                                         <p class="card-text mb-1 mt-1">{{ $p1->description }}</p>
                                     </div>
                                     <hr>
-                                    <div class="text-right buttons">
-                                        <a class="btn btn-outline-dark"
-                                            onclick="location.href='{{ route('admin.serv.show', $p1->id) }}'">Xem</a>
-                                        <a class="btn btn-danger" type="button" onclick="return checkDelete()"
-                                            href="{{ route('admin.serv.delete', $p1->id) }}">Xóa</a>
+                                    <div class="card-body">
+                                        <div class="text-right buttons">
+                                            <a class="btn btn-outline-dark" onclick="location.href='{{route('admin.contact.show',$p1->id)}}'">Xem</a>
+                                            <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('admin.contact.delete',$p1->id)}}">Xóa</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
-                </div>
-                <div class="tab-pane fade" id="productType" role="tabpanel" aria-labelledby="contact-tab">
-                    <!--Dining-->
-                    <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span
-                            class="font-weight-bold text-uppercase">Thêm dịch vụ mới</span>
-                    </div>
-                    <form action="{{ route('admin.serv.store') }}" method="POST" class="form"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label for="name" class="col-form-label">Tên dịch vụ:</label>
-                            <input type="text" required class="form-control" name="name" id="name"
-                                value=" ">
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-file">
-                                <label class="custom-file-label" for="inputGroupFile01">Ảnh: </label>
-                                <input type="file" class="form-control" id="inputGroupFile01" name="img">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="description" class="col-form-label">Mô tả:</label>
-                            <textarea class="form-control" required name="description" id="description"></textarea>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button onclick="location.reload();" type="reset" class="btn btn-warning me-1 mb-1">Nhập lại
-                                thông tin</button>
-                            <button type="submit" class="btn btn-primary">Xác nhận</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
+    </div>
 @endsection

@@ -71,11 +71,11 @@
 						<nav id="bt-menu" class="bt-menu" >
 							<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
 							<ul>
-								<li class="current bt-icon"><a href="{{route('admin')}}">Trang chủ</a></li>
+								<li class="current bt-icon"><a href="{{route('admin')}}">Trang quản trị</a></li>
 								<li class="bt-icon"><a href="{{route('admin.serv')}}">Dịch vụ</a></li>
                                 <li class="bt-icon"><a href="{{route('admin.product')}}">Sản phẩm</a></li>
 								<li class="bt-icon"><a href="{{route('admin.proj')}}">Dự án</a></li>
-								<li class="bt-icon"><a href="{{route('contacts')}}">Liên hệ</a></li>
+								<li class="bt-icon"><a href="{{route('admin.contact')}}">Liên hệ</a></li>
                                 <li class="bt-icon"><a href="{{route('about')}}">Về chúng tôi</a></li>
 							</ul>
 						</nav>
@@ -84,9 +84,11 @@
 					<div class="clear"></div>
 				</div>
 			</div>
+
 		</header>
 <!--==============================header=================================-->
-@yield('body');
+@yield('body')
+
 <script>
     $(document).ready(function(){
      $(".bt-menu-trigger").toggle(
@@ -119,5 +121,22 @@
     init();
     })();
 </script>
+<header>
+    <script language="JavaScript" type="text/javascript">
+        function checkDelete() {
+            return confirm('Bạn có chắc chắn muốn xóa?');
+        }
+    </script>
+    <script language="JavaScript" type="text/javascript">
+        function checkConfirm() {
+            return confirm('Bạn có chắc chắn muốn tạo mới?');
+        }
+    </script>
+     <script language="JavaScript" type="text/javascript">
+        function checkUpdate() {
+            return confirm('Bạn có chắc chắn muốn cập nhật?');
+        }
+    </script>
+</header>
 </body>
 </html>

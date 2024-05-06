@@ -92,34 +92,25 @@
             }
         </style>
     </head>
-
-
-    @if (session('status'))
-        <h6 class="alert alert-success">{{ session('status') }} <button class="close" data-dismiss="alert">&times;</button>
-        </h6>
-    @endif
     <div class="container-fluid px-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
             <div class="container-fluid justify-content-center">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    {{-- @if ($type->type == 1)
-                        <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vật liệu xây dựng</a> </li>
-                    @else
-                        <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Nội thất</a> </li>
 
-                    @endif --}}
                     @foreach ($type2 as $t1)
                         <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab"
                                 href="#home" role="tab" aria-controls="home"
                                 aria-selected="true">{{ $t1->name }}</a> </li>
                     @endforeach
-                    {{-- <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vật liệu xây dựng</a> </li> --}}
-                    {{-- <li class="nav-item" role="presentation"> <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Nội thất</a> </li> --}}
                 </ul>
             </div>
         </nav>
     </div>
     <div class="container mt-2 mb-5">
+        @if (session('status'))
+        <h6 class="alert alert-success">{{ session('status') }} <button class="close"
+                data-dismiss="alert">&times;</button></h6>
+        @endif
         <div class="products">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
+
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
@@ -27,6 +28,7 @@ Route::get('/contacts', function () {
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/services/{id?}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+Route::get('/project/{id?}', [ProjectController::class, 'show'])->name('project.show');
 Route::get('/product', [ProductTypeController::class, 'index'])->name('product');
 Route::get('/list-product/{id?}', [ProductController::class, 'list'])->name('list');
 Route::get('/show-product/{id?}', [ProductController::class, 'show'])->name('show');
@@ -62,6 +64,18 @@ Route::get('/admin/productT/delete/{id?}', [ProductTypeController::class, 'delet
 
 Route::get('/admin/projects', [ProjectController::class,'adminindex'] )->name('admin.proj');
 Route::get('/admin/project/{id?}', [ProjectController::class, 'adminshow'])->name('admin.proj.show');
+Route::post('/admin/project/create/{id?}', [ProjectController::class, 'create'])->name('admin.proj.store');
+Route::get('/admin/project/delete/{id?}', [ProjectController::class, 'delete'])->name('admin.proj.delete');
+Route::post('/admin/project/update/{id?}', [ProjectController::class, 'update'])->name('admin.proj.update');
+
 
 Route::get('/admin/services', [ServiceController::class,'adminindex'] )->name('admin.serv');
 Route::get('/admin/service/{id?}', [ServiceController::class, 'adminshow'])->name('admin.serv.show');
+Route::post('/admin/service/create/{id?}', [serviceController::class, 'create'])->name('admin.serv.store');
+Route::get('/admin/service/delete/{id?}', [serviceController::class, 'delete'])->name('admin.serv.delete');
+Route::post('/admin/service/update/{id?}', [serviceController::class, 'update'])->name('admin.serv.update');
+
+Route::get('/admin/contacts', [ContactsController::class,'admin_index'] )->name('admin.contact');
+Route::get('/admin/contacts/{id?}', [ContactsController::class,'admin_show'] )->name('admin.contact.show');
+Route::get('/admin/contacts/delete/{id?}', [ContactsController::class,'delete'] )->name('admin.contact.delete');
+

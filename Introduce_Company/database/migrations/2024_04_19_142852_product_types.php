@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->tinyInteger('type')->default(1)->comment('1 - Sản phẩm xây dựng, 2 - Sản phẩm nội thất');
             $table->integer('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

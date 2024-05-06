@@ -65,6 +65,10 @@ label.radio input:checked+span {
     </style>
 </head>
     <div class="container_12 justify-content-center">
+        @if (session('status'))
+        <h6 class="alert alert-success">{{ session('status') }} <button class="close"
+                data-dismiss="alert">&times;</button></h6>
+        @endif
         <div class="row">
         @foreach ($pr1 as $p1)
         <div class="col-md-12">
@@ -85,14 +89,51 @@ label.radio input:checked+span {
         <div class="col-md-12">
             <h4>{{$p1->name}}</h4>
             <div class="d-flex flex-row">
-                {{-- <div class="icons mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div><span>1200 ratings &amp; 564 reviews</span> --}}
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Chỉnh sửa</button>
+                <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('admin.proj.delete',$p1->id)}}">Xóa</a>
             </div>
             <div class="d-flex align-items-center"></i><span class="ml-1">{{$p1->description}}<br></span></div>
            <hr>
-            <div class="mt-3"><button class="btn btn-primary" type="button">Liên hệ để được tư vẫn và hỗ trợ</button></div>
         </div>
         @endforeach
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa sản phẩm: {{$p1->name}} </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="{{route('admin.proj.update',$p1->id)}}" method="POST" class="form"
+                    enctype="multipart/form-data" >
+                    @csrf
+                    <div class="form-group">
+                      <label for="name" class="col-form-label">Tên sản phẩm:</label>
+                      <input type="text" required class="form-control" name="name" id="name"  value="{{$p1->name}} ">
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-file">
+                        <label class="custom-file-label" for="inputGroupFile01">Ảnh: </label>
+                        <input type="file" class="form-control" id="inputGroupFile01" name="img">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="description" class="col-form-label">Description:</label>
+                      <textarea class="form-control" required name="description" id="description">{{$p1->description}}</textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                        <button onclick="location.reload();" type="reset"
+                        class="btn btn-warning me-1 mb-1">Nhập lại thông tin</button>
+                        <button type="submit" onclick="return checkUpdate()" class="btn btn-primary">Xác nhận</button>
+                      </div>
+                  </form>
 
+
+            </div>
+        </div>
 
     </div>
 </div>
