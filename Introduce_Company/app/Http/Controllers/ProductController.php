@@ -43,18 +43,17 @@ class ProductController extends Controller
         $sanpham->name = $request->get('name');
         $sanpham->description = $request->get('description');
         $sanpham->price = $request->get('price');
-        // if ($request->hasFile('image')) {
-        //     $destination = 'images/' . $sanpham->hinhanh;
-        //     if (file_exists($destination)) {
-        //         File::delete($destination);
-        //     }
-        //     $file = $request->file('image');
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = time() . '.' . $extension;
-        //     $file->move('images/', $filename);
-        //     $sanpham->hinhanh = $filename;
-        // }
-        // $sanpham->inanh = $request->get('inanh');
+        if ($request->hasFile('image')) {
+            $destination = 'images/' . $sanpham->img;
+            if (file_exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('images/', $filename);
+            $sanpham->img = $filename;
+        }
         $sanpham->save();
         return redirect()->back()->with('status', 'Cập nhật thành công');
 

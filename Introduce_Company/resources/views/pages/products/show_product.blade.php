@@ -101,8 +101,6 @@ label.radio input:checked+span {
             <div class="mt-3"><button class="btn btn-primary" type="button">Liên hệ để được tư vẫn và hỗ trợ</button></div>
         </div>
         @endforeach
-
-
     </div>
 </div>
 

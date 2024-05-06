@@ -6,18 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
-use Illuminate\Support\Facades\File;
 class ProjectController extends Controller
 {
     public function index()
     {
         $products1 = DB::table("projects")->get();
         return view('pages.projects.projects',['pr1'=>$products1]);
-    }
-    public function show($id)
-    {
-        $products1 = DB::table("projects")->where("id","=",$id)->get();
-        return view('pages.projects.projects_show',['pr1'=>$products1]);
     }
     public function adminindex()
     {
@@ -53,17 +47,18 @@ class ProjectController extends Controller
         $project = Project::find($id);
         $project->name = $request->get('name');
         $project->description = $request->get('description');
-        if ($request->hasFile('img')) {
-            $destination = 'images/' . $project->img;
-            if (file_exists($destination)) {
-                File::delete($destination);
-            }
-            $file = $request->file('img');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('images/', $filename);
-            $project->img = $filename;
-        }
+        // if ($request->hasFile('image')) {
+        //     $destination = 'images/' . $project->hinhanh;
+        //     if (file_exists($destination)) {
+        //         File::delete($destination);
+        //     }
+        //     $file = $request->file('image');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time() . '.' . $extension;
+        //     $file->move('images/', $filename);
+        //     $project->hinhanh = $filename;
+        // }
+        // $project->inanh = $request->get('inanh');
         $project->save();
         return redirect()->back()->with('status', 'Cập nhật dự án '. $project->name.' thành công!');
 

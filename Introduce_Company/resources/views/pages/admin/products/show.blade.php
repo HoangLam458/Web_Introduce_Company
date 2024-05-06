@@ -130,8 +130,8 @@
                         @foreach ($pr1 as $p1)
                         <div class="col-md-4">
                             <div class="card">
-                                <a href="{{ route('product.details', $p1->id) }}"> <img src="{{ asset('img/1.jpg') }}"
-                                        class="card-img-top"></a>
+                                <a href="{{ route('product.details', $p1->id) }}"> <img src="{{ asset('/images/' . $p1->img) }}"
+                                        class="card-img-top" style="height: 144px;"></a>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between"> <span
                                             class="font-weight-bold">{{ $p1->name }}</span>
@@ -203,7 +203,7 @@
                 <div class="form-group">
                     <div class="custom-file">
                     <label class="custom-file-label" for="inputGroupFile01">Ảnh: </label>
-                    <input type="file" class="form-control" id="inputGroupFile01" name="img">
+                    <input type="file" class="form-control" id="inputGroupFile01" name="image">
                     </div>
                 </div>
                 <div class="form-group">
