@@ -96,7 +96,7 @@ label.radio input:checked+span {
             <div class="d-flex flex-row">
                 {{-- <div class="icons mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div><span>1200 ratings &amp; 564 reviews</span> --}}
             </div>
-            <div class="d-flex align-items-center"></i><span class="ml-1">{{$p1->description}}<br></span></div>
+            <div class="d-flex align-items-center"></i><span class="ml-1">{!!$p1->description!!}<br></span></div>
            <hr>
             <div class="mt-3"><button class="btn btn-primary" type="button">Liên hệ để được tư vẫn và hỗ trợ</button></div>
         </div>

@@ -44,14 +44,14 @@ class ProductController extends Controller
         $sanpham->description = $request->get('description');
         $sanpham->price = $request->get('price');
         if ($request->hasFile('image')) {
-            $destination = 'images/' . $sanpham->img;
+            $destination = 'images/products/' . $sanpham->img;
             if (file_exists($destination)) {
                 File::delete($destination);
             }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('images/', $filename);
+            $file->move('images/products/', $filename);
             $sanpham->img = $filename;
         }
         $sanpham->save();
@@ -94,7 +94,7 @@ class ProductController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('images/', $filename);
+            $file->move('images/products/', $filename);
             $sanphams->img = $filename;
         }
         if ($request->hasFile('image') == null) {

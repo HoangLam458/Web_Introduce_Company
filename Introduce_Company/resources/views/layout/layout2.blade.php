@@ -36,6 +36,7 @@
 		<script src="{{ asset('js/TMForm.js')}}"></script>
 		<!--[if (gt IE 9)|!(IE)]><!-->
 		<script src="{{ asset('Theme_css/js/jquery.mobile.customized.min.js')}}"></script>
+        <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 		<!--<![endif]-->
 		<script>
 		$(document).ready(function(){
@@ -81,14 +82,14 @@
 						</nav>
 						<div class="clear"></div>
 					</div>
-					<div class="clear"></div>
 				</div>
 			</div>
-
 		</header>
 <!--==============================header=================================-->
 @yield('body')
-
+<script>
+    CKEDITOR.replace('editor');
+</script>
 <script>
     $(document).ready(function(){
      $(".bt-menu-trigger").toggle(

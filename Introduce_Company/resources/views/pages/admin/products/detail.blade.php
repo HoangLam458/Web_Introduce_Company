@@ -76,9 +76,8 @@
                     <div class="carousel slide" data-ride="carousel" id="carousel-1">
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active"><img class="img-thumbnail w-100 d-block"
-                                    src="{{ asset('/images/' . $p1->img) }}"
-                                    style="height: 450px;" alt="Slide Image"
-                                    loading="lazy"></div>
+                                    src="{{ asset('/images/products/' . $p1->img) }}" style="height: 450px;"
+                                    alt="Slide Image" loading="lazy"></div>
                         </div>
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
@@ -88,8 +87,8 @@
                 <div class="col-md-12">
                     <h4>{{ $p1->name }}</h4>
                     <div class="mt-3">
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Chỉnh
-                            sửa</button>
+                        <a type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">Chỉnh sửa</a>
                         <a class="btn btn-danger" type="button" onclick="return checkDelete()"
                             href="{{ route('product.delete', $p1->id) }}">Xóa</a>
                     </div>
@@ -103,23 +102,16 @@
                         &nbsp;{{ number_format($p1->price) }} VND</span>
                 </div>
             @endif
-
-            <div class="d-flex flex-row">
-                {{-- <div class="icons mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div><span>1200 ratings &amp; 564 reviews</span> --}}
-            </div>
-            <div class="d-flex align-items-center"></i><span class="ml-1">{{ $p1->description }}<br></span></div>
             <hr>
-
+            <div class="d-flex align-items-center"></i><span class="ml-1">{!! $p1->description !!}<br></span></div>
+            @endforeach
+            <hr>
         </div>
-        @endforeach
-
-
     </div>
 
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa sản phẩm: {{ $p1->name }} </h5>
@@ -134,12 +126,13 @@
                         <div class="form-group">
                             <label for="name" class="col-form-label">Tên sản phẩm:</label>
                             <input type="text" required class="form-control" name="name" id="name"
-                                value="{{ $p1->name }} ">
+                                value="{{ $p1->name }}">
                         </div>
                         <div class="form-group">
                             <label for="price" class="col-form-label">Giá:</label>
                             <input type="text" required class="form-control" name="price" id="price"
                                 value="{{ $p1->price }}">
+
                         </div>
                         <div class="form-group">
                             <div class="custom-file">
@@ -148,26 +141,18 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="description" class="col-form-label">Description:</label>
-                            <textarea class="form-control" required name="description" id="description">{{ $p1->description }}</textarea>
+                            <label class="col-form-label">Mô tả:</label>
+                            <textarea class="ckeditor form-control" id="ckeditor" rows="10" cols="80" required name="description">{{ $p1->description }}"</textarea>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                            <button onclick="location.reload();" type="reset" class="btn btn-warning me-1 mb-1">Nhập lại
-                                thông tin</button>
                             <button type="submit" onclick="return checkUpdate()" class="btn btn-primary">Xác nhận</button>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
-        <header>
-            <script language="JavaScript" type="text/javascript">
-                function checkDelete() {
-                    return confirm('Bạn có chắc chắn muốn xóa?');
-                }
-            </script>
-        </header>
-    @endsection
+    </div>
+
+  
+@endsection

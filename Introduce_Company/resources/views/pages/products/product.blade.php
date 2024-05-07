@@ -116,17 +116,12 @@ hr{
                                         <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p1->name}}</span>
                                         {{-- <span class="font-weight-bold">$550</span> --}}
                                     </div>
-
                                         <p class="card-text mb-1 mt-1">{{$p1->description}}</p>
                                     </div>
                                     <hr>
-                                    {{-- <div class="card-body">
-                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <button class="btn btn-dark">Add to cart</button> </div>
-                                    </div> --}}
                                 </div>
                             </div>
                             @endforeach
-
                         </div>
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">

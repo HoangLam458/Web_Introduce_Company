@@ -125,20 +125,18 @@
                     <div class="row g-3">
                         @if ($pr1->count() > 0)
                         <div class="row-md-6" style="margin-top: 1px">
-                            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal"> Thêm sản phẩm mới </button>
+                            <a type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Thêm sản phẩm mới </a>
                         </div>
                         @foreach ($pr1 as $p1)
                         <div class="col-md-4">
                             <div class="card">
-                                <a href="{{ route('product.details', $p1->id) }}"> <img src="{{ asset('/images/' . $p1->img) }}"
+                                <a href="{{ route('product.details', $p1->id) }}"> <img src="{{ asset('/images/products/' . $p1->img) }}"
                                         class="card-img-top" style="height: 144px;"></a>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between"> <span
                                             class="font-weight-bold">{{ $p1->name }}</span>
                                         {{-- <span class="font-weight-bold">$550</span> --}}
                                     </div>
-
-                                    <p class="card-text mb-1 mt-1">{{ $p1->description }}</p>
                                 </div>
                                 <hr>
                                 <div class="card-body">
@@ -153,13 +151,14 @@
 
                             </div>
                         </div>
+
                     @endforeach
                         @else
                         <div class="row">
                             <h1>KHÔNG CÓ SẢN PHẨM !</h1>
                         </div>
                         <div class="row-md-6 center">
-                            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal"> Thêm sản phẩm mới </button>
+                            <a type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Thêm sản phẩm mới</a>
                         </div>
                             <div class="row-md-6 center">
                             <a class="btn btn-dark"> Trở về </a>
@@ -171,59 +170,51 @@
             </div>
         </div>
     </div>
-    <header>
-        <script language="JavaScript" type="text/javascript">
-            function checkDelete() {
-                return confirm('Bạn có chắc chắn muốn xóa?');
-            }
-        </script>
-    </header>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Thêm sản phẩm:  </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form action="{{route('product.store',$pTid)}}" method="POST" class="form"
-                enctype="multipart/form-data" >
-                @csrf
-                <div class="form-group">
-                  <label for="name" class="col-form-label">Tên sản phẩm:</label>
-                  <input type="text" required class="form-control" name="name" id="name"   >
-                </div>
-                <div class="form-group">
-                    <label for="price" class="col-form-label">Giá:</label>
-                    <input type="text" required class="form-control" name="price" id="price" >
-
-                  </div>
-                <div class="form-group">
-                    <div class="custom-file">
-                    <label class="custom-file-label" for="inputGroupFile01">Ảnh: </label>
-                    <input type="file" class="form-control" id="inputGroupFile01" name="image">
-                    </div>
-                </div>
-                <div class="form-group">
-                  <label for="description" class="col-form-label">Description:</label>
-                  <textarea class="form-control" required name="description" id="description"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="submit" onclick="return checkDelete()" class="btn btn-primary" >Xác nhận</button>
-                  </div>
-              </form>
-
-
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Thêm sản phẩm:  </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+          <div class="modal-body">
+            <form action="{{route('product.store',$pTid)}}" method="POST" class="form"
+              enctype="multipart/form-data" >
+              @csrf
+              <div class="form-group">
+                <label for="name" class="col-form-label">Tên sản phẩm:</label>
+                <input type="text" required class="form-control" name="name" id="name"   >
+              </div>
+              <div class="form-group">
+                  <label for="price" class="col-form-label">Giá:</label>
+                  <input type="text" required class="form-control" name="price" id="price" >
+
+                </div>
+              <div class="form-group">
+                  <div class="custom-file">
+                  <label class="custom-file-label" for="inputGroupFile01">Ảnh: </label>
+                  <input type="file" class="form-control" id="inputGroupFile01" name="image">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label class="col-form-label">Mô tả:</label>
+                <textarea class="ckeditor form-control" id="ckeditor" rows="10" cols="80" required name="description" ></textarea>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                  <button type="submit" onclick="return checkDelete()" class="btn btn-primary" >Xác nhận</button>
+                </div>
+            </form>
+      </div>
     </div>
-    <header>
-        <script language="JavaScript" type="text/javascript">
-            function checkDelete() {
-                return confirm('Bạn có chắc chắn muốn tạo sản phẩm này?');
-            }
+  </div>
+</div>
+    <head>
+         <script>
+            CKEDITOR.replace('ckeditor');
         </script>
-    </header>
+    </head>
+
 @endsection
