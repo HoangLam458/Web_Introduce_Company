@@ -122,7 +122,6 @@
                                             {{-- <span class="font-weight-bold">$550</span> --}}
                                         </div>
 
-                                        <p class="card-text mb-1 mt-1">{{ $p1->description }}</p>
                                     </div>
                                     <hr>
                                     <div class="text-right buttons">

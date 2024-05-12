@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TMC Group</title>
+    <title>TMC Group - Dịch vụ</title>
     <link rel="icon" type="image/png" href="{{ asset('Theme_css/images/2Q.png') }}">
     <link rel="shortcut icon" href="{{ asset('Theme_css/images/2Q.png') }}">
     <link rel="stylesheet" href="{{ asset('Theme_css/css/camera.css') }}">

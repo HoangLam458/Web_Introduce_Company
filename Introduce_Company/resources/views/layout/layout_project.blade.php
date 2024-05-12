@@ -88,6 +88,7 @@
                             <li class="bt-icon"><a href="{{ route('projects') }}">Dự án</a></li>
                             <li class="bt-icon"><a href="{{ route('contacts') }}">Liên hệ</a></li>
                             <li class="bt-icon"><a href="{{ route('about') }}">Về chúng tôi</a></li>
+
                         </ul>
                     </nav>
                     <div class="clear"></div>

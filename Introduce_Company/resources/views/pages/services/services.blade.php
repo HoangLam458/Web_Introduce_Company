@@ -1,6 +1,5 @@
-@extends('layout.layout')
+@extends('layout.layout_service')
 @section('body')
-
 <head>
     <style>
         url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
@@ -88,9 +87,6 @@ hr{
 }
     </style>
 </head>
-
-
-
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
                 <div class="container-fluid justify-content-center" >
@@ -112,15 +108,9 @@ hr{
                                     <a href="{{route('services.show',$p1->id)}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p1->name}}</span>
-                                        {{-- <span class="font-weight-bold">$550</span> --}}
                                     </div>
-
-                                        <p class="card-text mb-1 mt-1">{{$p1->description}}</p>
                                     </div>
                                     <hr>
-                                    {{-- <div class="card-body">
-                                        <div class="text-right buttons"> <button class="btn btn-outline-dark">add to wishlist</button> <button class="btn btn-dark">Add to cart</button> </div>
-                                    </div> --}}
                                 </div>
                             </div>
                             @endforeach

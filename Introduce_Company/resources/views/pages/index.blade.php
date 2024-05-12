@@ -43,7 +43,7 @@
 					</figure>
 					<span>Xem</span>
 				</a>
-				<a href="{{route('services')}}" data-path-hover="m 180,70.57627 -180,0 L 0,0 180,0 z">
+				<a href="{{route('product')}}" data-path-hover="m 180,70.57627 -180,0 L 0,0 180,0 z">
 					<figure>
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,262 0,0 180,0 z"/></svg>
 						<figcaption>

@@ -1,6 +1,6 @@
 @extends('layout.layout2')
 @section('body')
-    @include('sweetalert::alert')
+@include('sweetalert::alert')
 
     <head>
         <style>
@@ -154,5 +154,5 @@
         </div>
     </div>
 
-  
+
 @endsection

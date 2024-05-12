@@ -45,7 +45,7 @@ Route::get('/sendcontact', function(Illuminate\Http\Request $request){
     $adminEmail = 'huynhhao792002@gmail.com'; //Gửi thư đến ban quản trị
     Mail::mailer('smtp')->to( $adminEmail )->send(new Contact($lienhe));
     Session::put('sendct',1); // Neu bang` 1 gui alert gui mail thanh cong
-    return redirect()->route('contacts');
+    return redirect()->back()->with('status','Gửi mail liên hệ thành công!');
   })->name('sendcontact');
 
 
@@ -71,9 +71,9 @@ Route::post('/admin/project/update/{id?}', [ProjectController::class, 'update'])
 
 Route::get('/admin/services', [ServiceController::class,'adminindex'] )->name('admin.serv');
 Route::get('/admin/service/{id?}', [ServiceController::class, 'adminshow'])->name('admin.serv.show');
-Route::post('/admin/service/create/{id?}', [serviceController::class, 'create'])->name('admin.serv.store');
-Route::get('/admin/service/delete/{id?}', [serviceController::class, 'delete'])->name('admin.serv.delete');
-Route::post('/admin/service/update/{id?}', [serviceController::class, 'update'])->name('admin.serv.update');
+Route::post('/admin/service/create/{id?}', [ServiceController::class, 'create'])->name('admin.serv.store');
+Route::get('/admin/service/delete/{id?}', [ServiceController::class, 'delete'])->name('admin.serv.delete');
+Route::post('/admin/service/update/{id?}', [ServiceController::class, 'update'])->name('admin.serv.update');
 
 Route::get('/admin/contacts', [ContactsController::class,'admin_index'] )->name('admin.contact');
 Route::get('/admin/contacts/{id?}', [ContactsController::class,'admin_show'] )->name('admin.contact.show');

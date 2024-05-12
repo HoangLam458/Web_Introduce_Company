@@ -122,7 +122,7 @@
     init();
     })();
 </script>
-<header>
+
     <script language="JavaScript" type="text/javascript">
         function checkDelete() {
             return confirm('Bạn có chắc chắn muốn xóa?');
@@ -138,6 +138,6 @@
             return confirm('Bạn có chắc chắn muốn cập nhật?');
         }
     </script>
-</header>
+
 </body>
 </html>

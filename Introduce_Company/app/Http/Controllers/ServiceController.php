@@ -36,14 +36,14 @@ class ServiceController extends Controller
             'description'=> $request['description'],
             'status' => 1
         ]);
-        return redirect()->route('admin.serv')->with('status','Thêm loại dự án '. $request->name.' thành công!');
+        return redirect()->route('admin.serv')->with('status','Thêm loại dịch vụ '. $request->name.' thành công!');
     }
     public function delete($id)
     {
         {
             $user = Service::find($id);
                 $user->delete();
-                return redirect()->route('admin.serv')->with('status','Xóa dự án '. $user->name.' thành công!');
+                return redirect()->route('admin.serv')->with('status','Xóa dịch vụ '. $user->name.' thành công!');
         }
     }
     public function update(UpdateServiceRequest $request, $id)
@@ -65,7 +65,7 @@ class ServiceController extends Controller
         // }
         // $service->inanh = $request->get('inanh');
         $service->save();
-        return redirect()->back()->with('status', 'Cập nhật dự án '. $service->name.' thành công!');
+        return redirect()->back()->with('status', 'Cập nhật dịch vụ '. $service->name.' thành công!');
 
 
     }

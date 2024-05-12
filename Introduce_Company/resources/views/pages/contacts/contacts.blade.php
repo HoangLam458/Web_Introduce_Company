@@ -37,7 +37,6 @@
                             <dd><span>Telephone:</span>+1 800 603 6035</dd>
                             <dd><span>FAX:</span>+1 800 889 9898</dd>
                             <dd><span>E-mail:</span> <a href="#" class="col3">mail@demolink.org</a></dd>
-                            <dd><span>Skype:</span> <a href="#" class="col3">@skypename</a></dd>
                         </dl>
                     </address>
                     <p>24/7 support is available for all <span class="col3"><a

@@ -23,6 +23,11 @@ class ProjectController extends Controller
         $products1 = DB::table("projects")->where("id","=",$id)->get();
         return view('pages.admin.projects.projects_show',['pr1'=>$products1]);
     }
+    public function show($id)
+    {
+        $products1 = DB::table("projects")->where("id","=",$id)->get();
+        return view('pages.projects.projects_show',['pr1'=>$products1]);
+    }
     public function create(StoreProjectRequest $request)
     {
 

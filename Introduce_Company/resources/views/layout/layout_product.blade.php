@@ -59,6 +59,21 @@
             });
         })
     </script>
+    <style>
+        .customLink > a{
+          text-decoration : none;
+          color:#232323;
+        }
+        #circleIcon {
+          width : 60px;
+          height:60px;
+          line-height:60px;
+          border:2px dotted #232323;
+          border-radius:100%;
+          text-align:center
+        }
+        </style>
+
     <script>
         $(document).ready(function() {
             $().UItoTop({
@@ -70,31 +85,31 @@
 
 <body class="page1">
     <header>
-        <div class="container_12">
-            <div class="grid_12">
-                <div class="center">
-                    <a href="{{ route('home') }}"><img height="100" width="100"
-                            src="{{ asset('Theme_css/images/2Q.png') }}"></a>
-                </div>
-                <div> &nbsp;</div>
+        <div class="container-fluid" role="navigation">
+            <div class="text-center py-2">
 
-                <div class="menu_block">
-                    <nav id="bt-menu" class="bt-menu">
-                        <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
-                        <ul>
-                            <li class="current bt-icon"><a href="{{ route('home') }}">Trang chủ</a></li>
-                            <li class="bt-icon"><a href="{{ route('services') }}">Dịch vụ</a></li>
-                            <li class="bt-icon"><a href="{{ route('product') }}">Sản phẩm</a></li>
-                            <li class="bt-icon"><a href="{{ route('projects') }}">Dự án</a></li>
-                            <li class="bt-icon"><a href="{{ route('contacts') }}">Liên hệ</a></li>
-                            <li class="bt-icon"><a href="{{ route('about') }}">Về chúng tôi</a></li>
-                        </ul>
-                    </nav>
-                    <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
             </div>
-        </div>
+            <div class="row text-center align-items-center g-0">
+              <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none ms-auto">
+                <div class="d-flex justify-content-around border-top border-bottom border-dark">
+                  <div class="customLink"><a class="d-inline-block p-3" href="#">Home</a></div>
+                  <div class="customLink"><a class="d-inline-block p-3" href="#">Product</a></div>
+                  <div class="customLink"><a class="d-inline-block p-3" href="#">Pricing</a></div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-2 mx-auto" style="max-width:120px;">
+                <a href="{{ route('home') }}"><img height="100" width="100"
+                    src="{{ asset('Theme_css/images/2Q.png') }}"></a>
+              </div>
+              <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none me-auto">
+                <div class="d-flex justify-content-around border-top border-bottom border-dark">
+                  <div class="customLink"><a class="d-inline-block p-3" href="#">Company</a></div>
+                  <div class="customLink"><a class="d-inline-block p-3" href="#">Services</a></div>
+                  <div class="customLink"><a class="d-inline-block p-3" href="#">Contact Us</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
     </header>
     <!--==============================header=================================-->
     @yield('body');
