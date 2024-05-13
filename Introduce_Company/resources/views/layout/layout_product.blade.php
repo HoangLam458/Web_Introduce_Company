@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TMC Group</title>
+    <title>TMC Group - Sản phẩm</title>
     <link rel="icon" type="image/png" href="{{ asset('Theme_css/images/2Q.png') }}">
     <link rel="shortcut icon" href="{{ asset('Theme_css/images/2Q.png') }}">
     <link rel="stylesheet" href="{{ asset('Theme_css/css/camera.css') }}">
@@ -60,19 +60,20 @@
         })
     </script>
     <style>
-        .customLink > a{
-          text-decoration : none;
-          color:#232323;
+        .customLink>a {
+            text-decoration: none;
+            color: #232323;
         }
+
         #circleIcon {
-          width : 60px;
-          height:60px;
-          line-height:60px;
-          border:2px dotted #232323;
-          border-radius:100%;
-          text-align:center
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border: 2px dotted #232323;
+            border-radius: 100%;
+            text-align: center
         }
-        </style>
+    </style>
 
     <script>
         $(document).ready(function() {
@@ -87,29 +88,34 @@
     <header>
         <div class="container-fluid" role="navigation">
             <div class="text-center py-2">
-
             </div>
             <div class="row text-center align-items-center g-0">
-              <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none ms-auto">
-                <div class="d-flex justify-content-around border-top border-bottom border-dark">
-                  <div class="customLink"><a class="d-inline-block p-3" href="#">Home</a></div>
-                  <div class="customLink"><a class="d-inline-block p-3" href="#">Product</a></div>
-                  <div class="customLink"><a class="d-inline-block p-3" href="#">Pricing</a></div>
+                <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none ms-auto">
+                    <div class="d-flex justify-content-around border-top border-bottom border-dark">
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('home') }}">Home</a></div>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('product') }}">Product</a>
+                        </div>
+                        <div class="customLink"><a class="d-inline-block p-3"
+                                href="{{ route('projects') }}">Project</a></div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-2 col-md-2 mx-auto" style="max-width:120px;">
-                <a href="{{ route('home') }}"><img height="100" width="100"
-                    src="{{ asset('Theme_css/images/2Q.png') }}"></a>
-              </div>
-              <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none me-auto">
-                <div class="d-flex justify-content-around border-top border-bottom border-dark">
-                  <div class="customLink"><a class="d-inline-block p-3" href="#">Company</a></div>
-                  <div class="customLink"><a class="d-inline-block p-3" href="#">Services</a></div>
-                  <div class="customLink"><a class="d-inline-block p-3" href="#">Contact Us</a></div>
+                <div class="col-lg-2 col-md-2 mx-auto" style="max-width:120px;">
+                    <a href="{{ route('home') }}"><img height="100" width="100"
+                            src="{{ asset('Theme_css/images/2Q.png') }}"></a>
                 </div>
-              </div>
+                <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none me-auto">
+                    <div class="d-flex justify-content-around border-top border-bottom border-dark">
+
+                        <div class="customLink"><a class="d-inline-block p-3"
+                                href="{{ route('services') }}">Services</a></div>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('contacts') }}">Contact
+                                Us</a></div>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('about') }}">Company</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
     </header>
     <!--==============================header=================================-->
     @yield('body');

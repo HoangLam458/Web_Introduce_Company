@@ -64,6 +64,7 @@ label.radio input:checked+span {
 }
     </style>
 </head>
+<div class="container">
     <div class="container_12 justify-content-center">
         @if (session('status'))
         <h6 class="alert alert-success">{{ session('status') }} <button class="close"
@@ -102,6 +103,8 @@ label.radio input:checked+span {
         </div>
         @endforeach
     </div>
+</div>
+
 </div>
 
 @endsection

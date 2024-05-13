@@ -2,7 +2,8 @@
 @section('body')
 	<body class="page1">
 <!--==============================header=================================-->
-		<div class='container_1'>
+<div class="container">
+    <div class='container_1'>
         <div class="slider_wrapper">
 			<div id="camera_wrap" class="">
 				<div data-src="{{ asset('img/1.jpg')}}"></div>
@@ -63,4 +64,6 @@
 				</a>
 			</section>
 		</div>
+</div>
+
 @endsection

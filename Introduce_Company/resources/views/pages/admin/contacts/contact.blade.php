@@ -89,7 +89,7 @@
             }
         </style>
     </head>
-
+<div class="container">
     <div class="container-fluid px-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
             <div class="container-fluid justify-content-center">
@@ -142,4 +142,6 @@
             </div>
         </div>
     </div>
+</div>
+
 @endsection
