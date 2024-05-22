@@ -88,13 +88,13 @@ label.radio input:checked+span {
             </div>
         </div>
         <div class="col-md-12">
-            <h4>{{$p1->title}}</h4>
+            <h4><b>Tiêu đề: </b> {{$p1->title}}</h4>
             <div class="align-items-center">
-                <span class="ml-1">Tên người gửi: {{$p1->name}} </span>
+                <span class="ml-1"> <b>Tên người gửi:</b> {{$p1->name}} </span>
                 <br>
-                <span class="ml-1">Email: {{$p1->email}}</span>
+                <span class="ml-1"><b>Email:</b> {{$p1->email}}</span>
                 <br>
-                <span class="ml-1">{{$p1->description}}</span>
+                <span class="ml-1"><b>Nội dung:</b> {{$p1->description}}</span>
             </div>
             <div class="mt-3">
                 <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('admin.contact.delete',$p1->id)}}">Xóa</a>

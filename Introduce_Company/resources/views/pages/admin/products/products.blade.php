@@ -1,6 +1,6 @@
 @extends('layout.layout2')
 @section('body')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <head>
         <style>
@@ -96,12 +96,15 @@
                 <div class="container-fluid justify-content-center">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab" data-toggle="tab"
-                                href="#home" role="tab" aria-controls="home" aria-selected="true">Vật liệu xây dựng</a>
+                                href="#home" role="tab" aria-controls="home" aria-selected="true">Vật liệu xây
+                                dựng</a>
                         </li>
                         <li class="nav-item" role="presentation"> <a class="nav-link" id="contact-tab" data-toggle="tab"
-                                href="#contact" role="tab" aria-controls="contact" aria-selected="false">Nội thất</a> </li>
+                                href="#contact" role="tab" aria-controls="contact" aria-selected="false">Nội thất</a>
+                        </li>
                         <li class="nav-item" role="presentation"> <a class="nav-link" id="contact-tab" data-toggle="tab"
-                                href="#productType" role="tab" aria-controls="contact" aria-selected="false">Thêm loại sản
+                                href="#productType" role="tab" aria-controls="contact" aria-selected="false">Thêm loại
+                                sản
                                 phẩm</a> </li>
                     </ul>
                 </div>
@@ -110,8 +113,8 @@
         <div class="container mt-2 mb-5">
             <div class="products">
                 @if (session('status'))
-                <h6 class="alert alert-success">{{ session('status') }} <button class="close"
-                        data-dismiss="alert">&times;</button></h6>
+                    <h6 class="alert alert-success">{{ session('status') }} <button class="close"
+                            data-dismiss="alert">&times;</button></h6>
                 @endif
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -122,8 +125,8 @@
                             @foreach ($pr1 as $p1)
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <a href="{{ route('admin.product.list', $p1->id) }}"> <img src="{{ asset('img/1.jpg') }}"
-                                                class="card-img-top"></a>
+                                        <a href="{{ route('admin.product.list', $p1->id) }}"> <img
+                                                src="{{ asset('img/1.jpg') }}" class="card-img-top"></a>
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between"> <span
                                                     class="font-weight-bold">{{ $p1->name }}</span>
@@ -135,8 +138,10 @@
                                         <hr>
                                         <div class="card-body">
                                             <div class="text-right buttons">
-                                                <a class="btn btn-outline-dark" onclick="location.href='{{route('admin.product.list',$p1->id)}}'">Xem</a>
-                                                <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('productT.delete',$p1->id)}}">Xóa</a>
+                                                <a class="btn btn-outline-dark"
+                                                    onclick="location.href='{{ route('admin.product.list', $p1->id) }}'">Xem</a>
+                                                <a class="btn btn-danger" type="button" onclick="return checkDelete()"
+                                                    href="{{ route('productT.delete', $p1->id) }}">Xóa</a>
                                             </div>
                                         </div>
                                     </div>
@@ -154,8 +159,8 @@
                             @foreach ($pr2 as $p2)
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <a href="{{ route('admin.product.list', $p2->id) }}"> <img src="{{ asset('img/2.jpg') }}"
-                                                class="card-img-top"></a>
+                                        <a href="{{ route('admin.product.list', $p2->id) }}"> <img
+                                                src="{{ asset('img/2.jpg') }}" class="card-img-top"></a>
 
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between"> <span
@@ -167,8 +172,10 @@
                                         <hr>
                                         <div class="card-body">
                                             <div class="text-right buttons">
-                                                <a class="btn btn-outline-dark" onclick="location.href='{{route('admin.product.list',$p2->id)}}'">Xem</a>
-                                                <a class="btn btn-danger" type="button" onclick="return checkDelete()" href="{{route('productT.delete',$p2->id)}}">Xóa</a>
+                                                <a class="btn btn-outline-dark"
+                                                    onclick="location.href='{{ route('admin.product.list', $p2->id) }}'">Xem</a>
+                                                <a class="btn btn-danger" type="button" onclick="return checkDelete()"
+                                                    href="{{ route('productT.delete', $p2->id) }}">Xóa</a>
                                             </div>
                                         </div>
                                     </div>
@@ -180,24 +187,24 @@
                     <div class="tab-pane fade" id="productType" role="tabpanel" aria-labelledby="contact-tab">
                         <!--Dining-->
                         <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span
-                                class="font-weight-bold text-uppercase">Loại sản phẩm</span>
+                                class="font-weight-bold text-uppercase">Thêm Loại sản phẩm</span>
                         </div>
-                        <form action="{{route('productType.store')}}" method="POST" class="form"
-                            enctype="multipart/form-data" >
+                        <form action="{{ route('productType.store') }}" method="POST" class="form"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                              <label for="name" class="col-form-label">Tên loại sản phẩm:</label>
-                              <input type="text" required  class="form-control" name="name" id="name">
+                                <label for="name" class="col-form-label">Tên loại sản phẩm:</label>
+                                <input type="text" required class="form-control" name="name" id="name">
                             </div>
                             <div class="form-group">
                                 <div class="custom-file">
-                                <label class="custom-file-label" for="inputGroupFile01">Ảnh: </label>
-                                <input type="file" class="form-control" id="inputGroupFile01" name="img">
+                                    <label class="custom-file-label" for="inputGroupFile01">Ảnh: </label>
+                                    <input type="file" class="form-control" id="inputGroupFile01" name="img">
                                 </div>
                             </div>
                             <div class="form-group">
-                              <label for="description" class="col-form-label">Mô tả:</label>
-                              <textarea class="form-control" required name="description" id="description"></textarea>
+                                <label for="description" class="col-form-label">Mô tả:</label>
+                                <textarea class="form-control" required name="description" id="description"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="description" class="col-form-label">Loại:</label>
@@ -209,15 +216,14 @@
 
                             <div class="modal-footer">
                                 <button onclick="location.reload();" type="reset"
-                                class="btn btn-warning me-1 mb-1">Nhập lại thông tin</button>
-                                <button onclick="return checkConfirm()"  type="submit" class="btn btn-primary">Xác nhận</button>
-                              </div>
-                          </form>
+                                    class="btn btn-warning me-1 mb-1">Nhập lại thông tin</button>
+                                <button onclick="return checkConfirm()" type="submit" class="btn btn-primary">Xác
+                                    nhận</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 @endsection

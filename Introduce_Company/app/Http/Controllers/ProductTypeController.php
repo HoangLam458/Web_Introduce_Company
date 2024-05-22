@@ -15,7 +15,10 @@ class ProductTypeController extends Controller
     {
         $products1 = DB::table("product_types")->where("type",1)->get();
         $products2 = DB::table("product_types")->where("type",2)->get();
-        return view('pages.products.product',['pr1'=>$products1,'pr2'=>$products2,]);
+        $dataDropdown1 = DB::table("product_types")->where("type",1)->get();
+        $dataDropdown2 = DB::table("product_types")->where("type",2)->get();
+        return view('pages.products.product',['pr1'=>$products1,'pr2'=>$products2,'data1'=> $dataDropdown1,
+        'data2'=> $dataDropdown2]);
     }
     public function adminShow()
     {

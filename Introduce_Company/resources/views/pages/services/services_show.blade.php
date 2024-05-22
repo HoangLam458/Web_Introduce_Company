@@ -64,6 +64,7 @@ label.radio input:checked+span {
 }
     </style>
 </head>
+<div class="container">
     <div class="container_12 justify-content-center">
         <div class="row">
         @foreach ($pr1 as $p1)
@@ -97,5 +98,7 @@ label.radio input:checked+span {
 
     </div>
 </div>
+
+
 
 @endsection

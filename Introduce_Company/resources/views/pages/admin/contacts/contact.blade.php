@@ -125,7 +125,6 @@
                                         </div>
                                         <p class="card-text mb-1 mt-1">Tên người gửi: {{ $p1->name }}</p>
 
-                                        <p class="card-text mb-1 mt-1">{{ $p1->description }}</p>
                                     </div>
                                     <hr>
                                     <div class="card-body">

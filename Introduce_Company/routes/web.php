@@ -9,12 +9,13 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CKEditorController;
 
-Route::get('/', function () {
-    return view('pages.index');
-})->name('home');
+
+
+Route::get('/', [UserController::class, 'homepage'])->name('home');
 
 Route::get('/admin', function () {
     return view('pages.login.login');
@@ -25,6 +26,7 @@ Route::get('/about', function () {
 Route::get('/contacts', function () {
     return view('pages.contacts.contacts');
 })->name('contacts');
+Route::post('ckeditor/upload', [CKEditorController::class,'upload'])->name('ckeditor.upload');
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/services/{id?}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');

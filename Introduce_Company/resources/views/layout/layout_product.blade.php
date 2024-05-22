@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>TMC Group - Sản phẩm</title>
@@ -15,19 +14,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        id="bootstrap-css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet"
         id="bootstrap-css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet" id="bootstrap-css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         id="bootstrap-css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="{{ asset('Theme_css/js/jquery.js') }}"></script>
     <script src="{{ asset('Theme_css/js/jquery-migrate-1.1.1.js') }}"></script>
     <script src="{{ asset('Theme_css/js/jquery.equalheights.js') }}"></script>
@@ -92,11 +91,9 @@
             <div class="row text-center align-items-center g-0">
                 <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none ms-auto">
                     <div class="d-flex justify-content-around border-top border-bottom border-dark">
-                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('home') }}">Home</a></div>
-                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('product') }}">Product</a>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('home') }}">Trang chủ</a></div>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('product') }}">Sản phẩm</a>
                         </div>
-                        <div class="customLink"><a class="d-inline-block p-3"
-                                href="{{ route('projects') }}">Project</a></div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 mx-auto" style="max-width:120px;">
@@ -106,12 +103,27 @@
                 <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none me-auto">
                     <div class="d-flex justify-content-around border-top border-bottom border-dark">
 
-                        <div class="customLink"><a class="d-inline-block p-3"
-                                href="{{ route('services') }}">Services</a></div>
-                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('contacts') }}">Contact
-                                Us</a></div>
-                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('about') }}">Company</a>
+                        <div class="dropdown customLink">
+                            <a class="d-inline-block p-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              Vật liệu xây dựng
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                @foreach ($data1 as $item )
+                                <li><a class="dropdown-item" href="{{route('list',$item->id)}}">{{$item->name}}</a></li>
+                                @endforeach
+                            </ul>
                         </div>
+                        <div class="dropdown customLink">
+                            <a class="d-inline-block p-3" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                              Nội thất
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                @foreach ($data2 as $item )
+                                <li><a class="dropdown-item" href="{{route('list',$item->id)}}">{{$item->name}}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>

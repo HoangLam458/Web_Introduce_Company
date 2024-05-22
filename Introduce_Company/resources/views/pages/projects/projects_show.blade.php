@@ -64,7 +64,8 @@ label.radio input:checked+span {
 }
     </style>
 </head>
-    <div class="container_12 justify-content-center">
+
+    <div class="container justify-content-center">
         <div class="row">
         @foreach ($pr1 as $p1)
         <div class="col-md-12">
@@ -91,10 +92,8 @@ label.radio input:checked+span {
             </div>
             <div class="d-flex align-items-center"></i><span class="ml-1">{!! $p1->description !!}<br></span></div>
            <hr>
-            <div class="mt-3"><button class="btn btn-primary" type="button">Liên hệ để được tư vẫn và hỗ trợ</button></div>
         </div>
         @endforeach
     </div>
-</div>
 
 @endsection

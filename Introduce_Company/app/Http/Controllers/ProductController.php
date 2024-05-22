@@ -17,19 +17,37 @@ class ProductController extends Controller
         $product = DB::table("products")->where("product_type_id", $id)->get();
         $type = DB::table("product_types")->where("id", $id)->first("type");
         $type2 = DB::table("product_types")->where("id", $id)->get();
-        return view('pages.products.list_product', ['pr1' => $product, 'type' => $type, 'type2' => $type2]);
+        //
+        $dataDropdown1 = DB::table("product_types")->where("type", 1)->get();
+        $dataDropdown2 = DB::table("product_types")->where("type", 2)->get();
+        return view(
+            'pages.products.list_product',
+            [
+                'pr1' => $product,
+                'type' => $type,
+                'type2' => $type2,
+                'data1' => $dataDropdown1,
+                'data2' => $dataDropdown2
+            ]
+        );
     }
     public function show($id)
     {
         $product = DB::table('products')->where('id', $id)->get();
-        return view('pages.products.show_product', ['pr1' => $product]);
+        $dataDropdown1 = DB::table("product_types")->where("type", 1)->get();
+        $dataDropdown2 = DB::table("product_types")->where("type", 2)->get();
+        return view('pages.products.show_product', [
+            'pr1' => $product,
+            'data1' => $dataDropdown1,
+            'data2' => $dataDropdown2
+        ]);
     }
     public function adminShowList($id)
     {
         $product = DB::table("products")->where("product_type_id", $id)->get();
         $type = DB::table("product_types")->where("id", $id)->first("type");
         $type2 = DB::table("product_types")->where("id", $id)->get();
-        return view('pages.admin.products.show', ['pr1' => $product, 'type' => $type, 'type2' => $type2,'pTid'=>$id]);
+        return view('pages.admin.products.show', ['pr1' => $product, 'type' => $type, 'type2' => $type2, 'pTid' => $id]);
     }
     public function details($id)
     {
@@ -76,10 +94,10 @@ class ProductController extends Controller
     }
     public function delete($id)
     {
-            $user = Product::find($id);
-            $type = ProductType::where('id', $user->product_type_id)->first();
-            $user->delete();
-            return redirect()->route('admin.product.list', $type->id)->with('status', 'Xóa thành công!');
+        $user = Product::find($id);
+        $type = ProductType::where('id', $user->product_type_id)->first();
+        $user->delete();
+        return redirect()->route('admin.product.list', $type->id)->with('status', 'Xóa thành công!');
 
     }
     public function create(StoreProductRequest $request, $id)

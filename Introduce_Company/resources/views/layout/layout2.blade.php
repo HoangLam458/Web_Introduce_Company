@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TMC Group</title>
+    <title>TMC Group - Admin</title>
     <link rel="icon" type="image/png" href="{{ asset('Theme_css/images/2Q.png') }}">
     <link rel="shortcut icon" href="{{ asset('Theme_css/images/2Q.png') }}">
     <link rel="stylesheet" href="{{ asset('Theme_css/css/camera.css') }}">
@@ -41,6 +41,9 @@
     <!--[if (gt IE 9)|!(IE)]><!-->
     <script src="{{ asset('Theme_css/js/jquery.mobile.customized.min.js') }}"></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('ckeditor/config.js') }}"></script>
+    <script src="{{ asset('ckeditor/style.js') }}"></script>
+
     <!--<![endif]-->
     <script>
         $(document).ready(function() {
@@ -117,29 +120,7 @@
     </header>
     <!--==============================header=================================-->
     @yield('body');
-    <footer>
-        <div class="container_12">
-            <div class="grid_6">
-                <h3>Thông tin</h3>
-                <p style="text-align:left; font-size:15px;">
-                    Địa chỉ: 17-19-21 Nguyễn Văn Trỗi,<br>
-                    Phú Nhuận,Thành phố Hồ Chí Minh <br>
-                    Số điện thoại: <br>
-                    Email: <br>
-            </div>
-            <div class="grid_6">
-                <h3>Liên kết nhanh</h3>
-                <ul>
-                    <li class="current bt-icon"><a href="{{ route('home') }}">Trang chủ</a></li>
-                    <li class="bt-icon"><a href="{{ route('services') }}">Dịch vụ</a></li>
-                    <li class="bt-icon"><a href="{{ route('product') }}">Sản phẩm</a></li>
-                    <li class="bt-icon"><a href="{{ route('projects') }}">Dự án</a></li>
-                    <li class="bt-icon"><a href="{{ route('contacts') }}">Liên hệ</a></li>
-                    <li class="bt-icon"><a href="{{ route('about') }}">Về chúng tôi</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+
     <script>
         $(document).ready(function() {
             $(".bt-menu-trigger").toggle(
@@ -178,6 +159,13 @@
         })();
     </script>
 </body>
+<script>
+    CKEDITOR.replace('editor', {
+        filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token() ]) }}",
+        filebrowserUploadMethod: 'form'
+    });
+</script>
+
 <script language="JavaScript" type="text/javascript">
     function checkDelete() {
         return confirm('Bạn có chắc chắn muốn xóa?');

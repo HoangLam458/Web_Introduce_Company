@@ -15,9 +15,13 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function homepage()
     {
-        
+        $project = DB::table("projects")->get()->random(6);
+        $service = DB::table("services")->get()->random(6);
+        return view('pages.index',[
+            'project'=>$project,'service'=>$service
+        ]);
     }
 
     /**

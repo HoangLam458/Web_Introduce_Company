@@ -41,6 +41,8 @@
     <!--[if (gt IE 9)|!(IE)]><!-->
     <script src="{{ asset('Theme_css/js/jquery.mobile.customized.min.js') }}"></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('ckeditor/config.js') }}"></script>
+    <script src="{{ asset('ckeditor/style.js') }}"></script>
     <!--<![endif]-->
     <script>
         $(document).ready(function() {
@@ -92,11 +94,13 @@
             <div class="row text-center align-items-center g-0">
                 <div class="col-lg-5 col-md-5 d-none d-lg-block d-md-block d-xs-none ms-auto">
                     <div class="d-flex justify-content-around border-top border-bottom border-dark">
-                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('home') }}">Home</a></div>
-                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('product') }}">Product</a>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('home') }}">Trang chủ</a></div>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('product') }}">Sản phẩm</a>
                         </div>
                         <div class="customLink"><a class="d-inline-block p-3"
-                                href="{{ route('projects') }}">Project</a></div>
+                                href="{{ route('projects') }}">Dự án</a></div>
+                                <div class="customLink"><a class="d-inline-block p-3"
+                                    href="{{ route('services') }}">Dịch vụ</a></div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 mx-auto" style="max-width:120px;">
@@ -107,10 +111,12 @@
                     <div class="d-flex justify-content-around border-top border-bottom border-dark">
 
                         <div class="customLink"><a class="d-inline-block p-3"
-                                href="{{ route('services') }}">Services</a></div>
-                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('contacts') }}">Contact
-                                Us</a></div>
-                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('about') }}">Company</a>
+                            href="#">Tin tức & Sự kiện</a></div>
+                            <div class="customLink"><a class="d-inline-block p-3"
+                                href="#">Blog</a></div>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('contacts') }}">Liên hệ
+                                </a></div>
+                        <div class="customLink"><a class="d-inline-block p-3" href="{{ route('about') }}">Giới thiệu</a>
                         </div>
                     </div>
                 </div>

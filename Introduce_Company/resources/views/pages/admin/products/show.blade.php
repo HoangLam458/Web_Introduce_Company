@@ -97,7 +97,6 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
                 <div class="container-fluid justify-content-center">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-
                         @foreach ($type2 as $t1)
                             <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab"
                                     data-toggle="tab" href="#home" role="tab" aria-controls="home"
@@ -107,6 +106,7 @@
                 </div>
             </nav>
         </div>
+
         <div class="container mt-2 mb-5">
             @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }} <button class="close"
@@ -116,12 +116,6 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center">
-                            {{-- @if ($type->type == 1)
-                              <span class="font-weight-bold text-uppercase">Vật liệu xây dựng</span>
-                        @else
-                             <span class="font-weight-bold text-uppercase">Nội thất</span>
-
-                        @endif --}}
                         </div>
                         <div class="row g-3">
                             @if ($pr1->count() > 0)
@@ -129,6 +123,7 @@
                                     <a type="button" class="btn btn-primary" data-toggle="modal"
                                         data-target=".bd-example-modal-lg">Thêm sản phẩm mới </a>
                                 </div>
+                                <hr>
                                 @foreach ($pr1 as $p1)
                                     <div class="col-md-4">
                                         <div class="card">
@@ -160,6 +155,7 @@
                                 <div class="row">
                                     <h1>KHÔNG CÓ SẢN PHẨM !</h1>
                                 </div>
+                                <hr>
                                 <div class="row-md-6 center">
                                     <a type="button" class="btn btn-primary" data-toggle="modal"
                                         data-target=".bd-example-modal-lg">Thêm sản phẩm mới</a>

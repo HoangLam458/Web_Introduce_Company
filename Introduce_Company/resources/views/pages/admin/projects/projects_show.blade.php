@@ -65,7 +65,7 @@
         </style>
     </head>
     <div class="container">
-        <div class="container_12 justify-content-center">
+        <div class="container justify-content-center">
             @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }} <button class="close"
                         data-dismiss="alert">&times;</button></h6>
@@ -126,7 +126,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-form-label">Mô tả:</label>
-                                <textarea class="ckeditor form-control" id="ckeditor" rows="10" cols="80" required name="description">{{ $p1->description }}"</textarea>
+                                <textarea class="ckeditor form-control" id="ckeditor" rows="10" cols="80" required name="description">{{ $p1->description }}</textarea>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>

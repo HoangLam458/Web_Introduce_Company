@@ -103,7 +103,7 @@ hr{
             <div class="products">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span class="font-weight-bold text-uppercase">Vật liệu xây dựng</span>
+                        <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span class="font-weight-bold text-uppercase"><b> Vật liệu xây dựng</b></span>
                         </div>
                         <div class="row g-3">
                             @foreach ($pr1 as $p1 )
@@ -111,7 +111,7 @@ hr{
                                 <div class="card">
                                     <a href="{{route('list',$p1->id)}}"> <img src="{{ asset('img/1.jpg')}}" class="card-img-top"></a>
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p1->name}}</span>
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold"><b>{{$p1->name}}</b></span>
                                         {{-- <span class="font-weight-bold">$550</span> --}}
                                     </div>
                                         <p class="card-text mb-1 mt-1">{{$p1->description}}</p>
@@ -124,7 +124,7 @@ hr{
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <!--Dining-->
-                        <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span class="font-weight-bold text-uppercase">Nội thất</span>
+                        <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span class="font-weight-bold text-uppercase" ><b>Nội thất</b></span>
                         </div>
                         <div class="row g-3">
                             @foreach ($pr2 as $p2 )
@@ -133,7 +133,7 @@ hr{
                                 <a href="{{route('list',$p2->id)}}"> <img src="{{ asset('img/2.jpg')}}" class="card-img-top"></a>
 
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">{{$p2->name}}</span>
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold"><b> {{$p2->name}}</b></span>
                                             {{-- <span class="font-weight-bold">$450</span> --}}
                                          </div>
                                         <p class="card-text mb-1 mt-1">{{$p2->description}}</p>
