@@ -165,7 +165,6 @@
         filebrowserUploadMethod: 'form'
     });
 </script>
-
 <script language="JavaScript" type="text/javascript">
     function checkDelete() {
         return confirm('Bạn có chắc chắn muốn xóa?');

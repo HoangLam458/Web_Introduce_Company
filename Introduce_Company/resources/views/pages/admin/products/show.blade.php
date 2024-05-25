@@ -213,10 +213,5 @@
             </div>
         </div>
     </div>
-    <head>
-        <script>
-            CKEDITOR.replace('ckeditor');
-        </script>
-    </head>
 
 @endsection
