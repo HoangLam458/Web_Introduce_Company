@@ -12,6 +12,22 @@ use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        $product = DB::table("products")->get()->random(18);
+        $product2 = DB::table("products")->get()->random(3);
+        $type = DB::table("product_types")->where('type',1)->get();
+        $type2 = DB::table("product_types")->where('type',2)->get();
+        return view(
+            'pages.products.product',
+            [
+                'pr1' => $product,
+                'pr2' => $product2,
+                'type1'=>$type,
+                'type2'=>$type2
+            ]
+        );
+    }
     public function list($id)
     {
         $product = DB::table("products")->where("product_type_id", $id)->get();

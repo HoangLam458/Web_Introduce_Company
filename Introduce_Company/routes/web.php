@@ -31,7 +31,7 @@ Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/services/{id?}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 Route::get('/project/{id?}', [ProjectController::class, 'show'])->name('project.show');
-Route::get('/product', [ProductTypeController::class, 'index'])->name('product');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/list-product/{id?}', [ProductController::class, 'list'])->name('list');
 Route::get('/show-product/{id?}', [ProductController::class, 'show'])->name('show');
 Route::post('/contact/store', [ContactsController::class, 'store'])->name('Storecontact');

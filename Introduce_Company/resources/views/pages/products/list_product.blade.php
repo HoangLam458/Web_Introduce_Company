@@ -1,4 +1,4 @@
-@extends('layout.layout_product')
+@extends('layout.layout')
 @section('body')
 
     <head>

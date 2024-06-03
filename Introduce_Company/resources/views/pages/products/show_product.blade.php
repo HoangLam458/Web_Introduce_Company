@@ -3,13 +3,9 @@
 
     <head>
         <style>
-            body {
-                background: #fff;
-
-            }
-
             .carousel-item {
-                width: 100%
+                width: 100%;
+                height: 50%
             }
 
             .price span {
@@ -64,7 +60,8 @@
             }
         </style>
     </head>
-    <div class="container">
+    
+    <div class="container" style="margin-top: 20px">
         <div class="container_12 justify-content-center">
             <div class="row">
                 @if (session('status'))
@@ -76,21 +73,9 @@
                         <div class="carousel slide" data-ride="carousel" id="carousel-1">
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active"><img class="img-thumbnail w-100 d-block"
-                                        src="{{ asset('img/1.jpg') }}" alt="Slide Image" loading="lazy"></div>
-                                <div class="carousel-item"><img class="img-thumbnail w-100 d-block"
-                                        src="{{ asset('img/3.jpg') }}" alt="Slide Image"></div>
-                                <div class="carousel-item"><img class="img-thumbnail w-100 d-block"
-                                        src="{{ asset('img/2.jpg') }}" alt="Slide Image"></div>
+                                        src="{{ asset('/images/products/' . $p1->img) }}" height="400px" width="400px" alt="Slide Image" loading="lazy"></div>
+
                             </div>
-                            <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span
-                                        class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a
-                                    class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><span
-                                        class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-1" data-slide-to="1"></li>
-                                <li data-target="#carousel-1" data-slide-to="2"></li>
-                            </ol>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -109,7 +94,6 @@
                     tư vẫn và hỗ trợ</a>
                 <hr>
                 <div class="d-flex align-items-center"></i><span class="ml-1">{!! $p1->description !!}<br></span></div>
-                <hr>
             </div>
             @endforeach
         </div>
