@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
     protected $guarded=[];
     public function product_types(){
-        return $this->belongsTo(Product_Type::class);
+        return $this->belongsTo(ProductType::class);
     }
 
 }

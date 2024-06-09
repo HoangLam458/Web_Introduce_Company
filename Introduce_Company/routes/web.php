@@ -13,10 +13,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CKEditorController;
 
-
-
 Route::get('/', [UserController::class, 'homepage'])->name('home');
-
 Route::get('/admin', function () {
     return view('pages.login.login');
 })->name('admin');
@@ -30,7 +27,7 @@ Route::post('ckeditor/upload', [CKEditorController::class,'upload'])->name('cked
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/services/{id?}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
-Route::get('/project/{id?}', [ProjectController::class, 'show'])->name('project.show');
+Route::get('/list-project/{id?}', [ProjectController::class, 'show'])->name('project.show');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/list-product/{id?}', [ProductController::class, 'list'])->name('list');
 Route::get('/show-product/{id?}', [ProductController::class, 'show'])->name('show');

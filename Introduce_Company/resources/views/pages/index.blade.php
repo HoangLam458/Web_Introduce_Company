@@ -1,6 +1,56 @@
 @extends('layout.layout')
 @section('body')
     <!--==============================header=================================-->
+    <style type="text/css">
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 10;
+            right: 10;
+            top: 5;
+            width: 50%;
+            height: 50%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup img {
+            display: block;
+            margin: 15% auto;
+            max-width: 80%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+     <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Quét QR để liên hệ trực tiếp </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="{{ asset('Theme_css/images/qr.png') }}" class="img-fluid">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
     <div class="hero">
         <div class="container">
             <div class="row justify-content-between">
@@ -11,8 +61,10 @@
                             cung cấp các giải pháp tối ưu và sáng tạo cho không gian sống và làm việc. Với đội ngũ kiến trúc
                             sư, kỹ sư và nhà thiết kế tài năng, TMC IV IV IV cam kết mang đến những công trình chất lượng
                             cao, thẩm mỹ và bền vững.</p>
-                        <p><a href="" class="btn btn-secondary me-2">Xem thêm về chúng tôi</a><a href="#"
-                                class="btn btn-white-outline">Liên hệ</a></p>
+                        <p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Hãy kết nối với chúng tôi , cùng chia sẻ lợi nhuận
+                              </button>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -23,6 +75,32 @@
             </div>
         </div>
     </div>
+
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{ asset('img/1.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('img/2.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('img/3.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('img/4.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
     <div class="product-section">
         <div class="container">
             <div class="row">
@@ -37,47 +115,14 @@
                 <!-- End Column 1 -->
 
                 <!-- Start Column 2 -->
+                @foreach ( $project as $item)
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                    <a class="product-item" href="cart.html">
-                        <img src="{{ asset('Theme_css/images/product-1.png') }}" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="{{ asset('Theme_css/images/cross.svg') }}" class="img-fluid">
-                        </span>
+                    <a class="product-item" href="{{ route('project.show', $item->id) }}" >
+                        <img src="{{ asset($item->image) }}" class="img-fluid product-thumbnail">
+                        <h3 class="product-title">{{$item->name}}</h3>
                     </a>
                 </div>
-                <!-- End Column 2 -->
-
-                <!-- Start Column 3 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                    <a class="product-item" href="cart.html">
-                        <img src="{{ asset('Theme_css/images/product-2.png') }}" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Kruzo Aero Chair</h3>
-                        <strong class="product-price">$78.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="{{ asset('Theme_css/images/cross.svg') }}" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 3 -->
-
-                <!-- Start Column 4 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                    <a class="product-item" href="cart.html">
-                        <img src="{{ asset('Theme_css/images/product-3.png') }}" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Ergonomic Chair</h3>
-                        <strong class="product-price">$43.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="{{ asset('Theme_css/images/cross.svg') }}" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 4 -->
-
+                @endforeach
             </div>
         </div>
     </div>
@@ -233,23 +278,30 @@
                 </div>
                 <div class="col-lg-5 ps-lg-5">
                     <h2 class="section-title mb-4">Chúng Tôi Giúp Bạn Tạo Ra Thiết Kế Nội Thất Hiện Đại</h2>
-                    <p>Chúng tôi hiểu rằng việc tạo ra một không gian sống và làm việc đẹp và tiện nghi là rất quan trọng. Với đội ngũ chuyên gia giàu kinh nghiệm và sáng tạo, TMC cam kết mang đến cho bạn những giải pháp thiết kế nội thất độc đáo và hiện đại nhất.</p>
+                    <p>Chúng tôi hiểu rằng việc tạo ra một không gian sống và làm việc đẹp và tiện nghi là rất quan trọng.
+                        Với đội ngũ chuyên gia giàu kinh nghiệm và sáng tạo, TMC cam kết mang đến cho bạn những giải pháp
+                        thiết kế nội thất độc đáo và hiện đại nhất.</p>
 
                     <ul class="list-unstyled custom-list my-4">
                         <li>Chăm sóc tận tình:
-                        <br>Hỗ trợ trong suốt quá trình thi công và sử dụng.</li>
+                            <br>Hỗ trợ trong suốt quá trình thi công và sử dụng.
+                        </li>
                         <li>Thiết kế tối ưu không gian:
-                            <br> Tạo ra không gian sống tiện nghi và thẩm mỹ.</li>
+                            <br> Tạo ra không gian sống tiện nghi và thẩm mỹ.
+                        </li>
                         <li>Giải pháp tiết kiệm chi phí:
-                            <br>Tư vấn giải pháp hợp lý và hiệu quả.</li>
+                            <br>Tư vấn giải pháp hợp lý và hiệu quả.
+                        </li>
                         <li>Vật liệu cao cấp:
-                            <br>Sử dụng vật liệu chất lượng cao và bền bỉ.</li>
+                            <br>Sử dụng vật liệu chất lượng cao và bền bỉ.
+                        </li>
                     </ul>
                     <p><a herf="#" class="btn">Khám phá ngay</a></p>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- End We Help Section -->
 
     <!-- Start Popular Product -->

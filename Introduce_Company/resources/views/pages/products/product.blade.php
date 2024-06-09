@@ -259,10 +259,10 @@
                             <div class="col-md-4">
                                 <section class="panel">
                                     <div class="pro-img-box">
-                                        <img src="{{ asset('/images/products/' . $item->img) }}" width="250px"
+                                        <a href="{{ route('show', $item->id) }}" class="pro-title">
+                                            <img  src="{{ asset('/images/products/' . $item->img) }}"
+
                                             height="200px" alt="" />
-                                        <a href="#" class="adtocart">
-                                            <i class="fa fa-shopping-cart"></i>
                                         </a>
                                     </div>
                                     <div class="panel-body text-center">

@@ -2,104 +2,429 @@
 @section('body')
 
     <head>
-        <style>
+        <style type="text/css">
+            @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+            $main-green: #79dd09 !default;
+            $main-green-rgb-015: rgba(121, 221, 9, 0.1) !default;
+            $main-yellow: #bdbb49 !default;
+            $main-yellow-rgb-015: rgba(189, 187, 73, 0.1) !default;
+            $main-red: #bd150b !default;
+            $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
+            $main-blue: #0076bd !default;
+            $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
+
+            /* This pen */
             body {
-                background: #fff;
-
+                font-family: "Baloo 2", cursive;
+                font-size: 16px;
+                color: #ffffff;
+                text-rendering: optimizeLegibility;
+                font-weight: initial;
             }
 
-            .carousel-item {
-                width: 100%
+            .dark {
+                background: #110f16;
             }
 
-            .price span {
-                font-size: 18px
+
+            .light {
+                background: #f3f5f7;
             }
 
-            .cut {
-                text-decoration: line-through;
-                color: red
+            a,
+            a:hover {
+                text-decoration: none;
+                transition: color 0.3s ease-in-out;
             }
 
-            .icons i {
-                font-size: 17px;
-                color: green;
-                margin-right: 2px
+            #pageHeaderTitle {
+                margin: 2rem 0;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 2.5rem;
             }
 
-            .offers i {
-                color: green
+            /* Cards */
+            .postcard {
+                flex-wrap: wrap;
+                display: flex;
+
+                box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+                border-radius: 10px;
+                margin: 0 0 2rem 0;
+                overflow: hidden;
+                position: relative;
+                color: #ffffff;
+
+                &.dark {
+                    background-color: #18151f;
+                }
+
+                &.light {
+                    background-color: #e1e5ea;
+                }
+
+                .t-dark {
+                    color: #18151f;
+                }
+
+                a {
+                    color: inherit;
+                }
+
+                h1,
+                .h1 {
+                    margin-bottom: 0.5rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                }
+
+                .small {
+                    font-size: 80%;
+                    margin-left: 20px;
+                }
+
+                .postcard__title {
+                    font-size: 1.75rem;
+                }
+
+                .postcard__img {
+                    max-height: 180px;
+                    width: 100%;
+                    object-fit: cover;
+                    position: relative;
+                }
+
+                .postcard__img_link {
+                    display: contents;
+                }
+
+                .postcard__bar {
+                    width: 50px;
+                    height: 10px;
+                    margin: 10px 0;
+                    border-radius: 5px;
+                    background-color: #424242;
+                    transition: width 0.2s ease;
+                }
+
+                .postcard__text {
+                    padding: 1.5rem;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .postcard__preview-txt {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: justify;
+                    height: 100%;
+                }
+
+                .postcard__tagbox {
+                    display: flex;
+                    flex-flow: row wrap;
+                    font-size: 14px;
+                    margin: 20px 0 0 0;
+                    padding: 0;
+                    justify-content: center;
+
+                    .tag__item {
+                        display: inline-block;
+                        background: rgba(83, 83, 83, 0.4);
+                        border-radius: 3px;
+                        padding: 2.5px 10px;
+                        margin: 0 5px 5px 0;
+                        cursor: default;
+                        user-select: none;
+                        transition: background-color 0.3s;
+
+                        &:hover {
+                            background: rgba(83, 83, 83, 0.8);
+                        }
+                    }
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-image: linear-gradient(-70deg, #424242, transparent 50%);
+                    opacity: 1;
+                    border-radius: 10px;
+                }
+
+                &:hover .postcard__bar {
+                    width: 100px;
+                }
             }
 
-            .delivery i {
-                color: blue
+            @media screen and (min-width: 769px) {
+                .postcard {
+                    flex-wrap: inherit;
+
+                    .postcard__title {
+                        font-size: 2rem;
+                        margin-left: 20px
+                    }
+
+                    .postcard__tagbox {
+                        justify-content: start;
+                    }
+
+                    .postcard__img {
+                        max-width: 300px;
+                        max-height: 100%;
+                        transition: transform 0.3s ease;
+                    }
+
+                    .postcard__text {
+                        padding: 3rem;
+                        width: 100%;
+                    }
+
+                    .media.postcard__text:before {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        background: #18151f;
+                        top: -20%;
+                        height: 130%;
+                        width: 55px;
+                    }
+
+                    &:hover .postcard__img {
+                        transform: scale(1.1);
+                    }
+
+                    &:nth-child(2n+1) {
+                        flex-direction: row;
+                    }
+
+                    &:nth-child(2n+0) {
+                        flex-direction: row-reverse;
+                    }
+
+                    &:nth-child(2n+1) .postcard__text::before {
+                        left: -12px !important;
+                        transform: rotate(4deg);
+                    }
+
+                    &:nth-child(2n+0) .postcard__text::before {
+                        right: -12px !important;
+                        transform: rotate(-4deg);
+                    }
+                }
             }
 
-            label.radio {
-                cursor: pointer
+            @media screen and (min-width: 1024px) {
+                .postcard__text {
+                    padding: 2rem 3.5rem;
+                }
+
+                .postcard__text:before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+
+                    top: -20%;
+                    height: 130%;
+                    width: 55px;
+                }
+
+                .postcard.dark {
+                    .postcard__text:before {
+                        background: #18151f;
+                    }
+                }
+
+                .postcard.light {
+                    .postcard__text:before {
+                        background: #e1e5ea;
+                    }
+                }
             }
 
-            label.radio input {
-                position: absolute;
-                top: 0;
-                left: 0;
-                visibility: hidden;
-                pointer-events: none
+            /* COLORS */
+            .postcard .postcard__tagbox .green.play:hover {
+                background: $main-green;
+                color: black;
             }
 
-            label.radio span {
-                padding: 2px 11px;
-                margin-right: 3px;
-                border: 1px solid #8f37aa;
-                display: inline-block;
-                color: #8f37aa;
-                border-radius: 3px;
-                text-transform: uppercase
+            .green .postcard__title:hover {
+                color: $main-green;
             }
 
-            label.radio input:checked+span {
-                border-color: #8f37aa;
-                background-color: #8f37aa;
-                color: #fff
+            .green .postcard__bar {
+                background-color: $main-green;
+            }
+
+            .green::before {
+                background-image: linear-gradient(-30deg,
+                        $main-green-rgb-015,
+                        transparent 50%);
+            }
+
+            .green:nth-child(2n)::before {
+                background-image: linear-gradient(30deg, $main-green-rgb-015, transparent 50%);
+            }
+
+            .postcard .postcard__tagbox .blue.play:hover {
+                background: $main-blue;
+            }
+
+            .blue .postcard__title:hover {
+                color: $main-blue;
+            }
+
+            .blue .postcard__bar {
+                background-color: $main-blue;
+            }
+
+            .blue::before {
+                background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
+            }
+
+            .blue:nth-child(2n)::before {
+                background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+            }
+
+            .postcard .postcard__tagbox .red.play:hover {
+                background: $main-red;
+            }
+
+            .red .postcard__title:hover {
+                color: $main-red;
+            }
+
+            .red .postcard__bar {
+                background-color: $main-red;
+            }
+
+            .red::before {
+                background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
+            }
+
+            .red:nth-child(2n)::before {
+                background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
+            }
+
+            .postcard .postcard__tagbox .yellow.play:hover {
+                background: $main-yellow;
+                color: black;
+            }
+
+            .yellow .postcard__title:hover {
+                color: $main-yellow;
+            }
+
+            .yellow .postcard__bar {
+                background-color: $main-yellow;
+            }
+
+            .yellow::before {
+                background-image: linear-gradient(-30deg,
+                        $main-yellow-rgb-015,
+                        transparent 50%);
+            }
+
+            .yellow:nth-child(2n)::before {
+                background-image: linear-gradient(30deg,
+                        $main-yellow-rgb-015,
+                        transparent 50%);
+            }
+
+            @media screen and (min-width: 769px) {
+                .green::before {
+                    background-image: linear-gradient(-80deg,
+                            $main-green-rgb-015,
+                            transparent 50%);
+                }
+
+                .green:nth-child(2n)::before {
+                    background-image: linear-gradient(80deg,
+                            $main-green-rgb-015,
+                            transparent 50%);
+                }
+
+                .blue::before {
+                    background-image: linear-gradient(-80deg,
+                            $main-blue-rgb-015,
+                            transparent 50%);
+                }
+
+                .blue:nth-child(2n)::before {
+                    background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
+                }
+
+                .red::before {
+                    background-image: linear-gradient(-80deg, $main-red-rgb-015, transparent 50%);
+                }
+
+                .red:nth-child(2n)::before {
+                    background-image: linear-gradient(80deg, $main-red-rgb-015, transparent 50%);
+                }
+
+                .yellow::before {
+                    background-image: linear-gradient(-80deg,
+                            $main-yellow-rgb-015,
+                            transparent 50%);
+                }
+
+                .yellow:nth-child(2n)::before {
+                    background-image: linear-gradient(80deg,
+                            $main-yellow-rgb-015,
+                            transparent 50%);
+                }
             }
         </style>
     </head>
-   
-    <div class="container justify-content-center " style="margin-top: 20px">
-        <div class="row">
+
+
+    <section class="light">
+        <div class="container py-2">
+            <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
             @foreach ($pr1 as $p1)
-                <div class="col-md-12">
-                    <div class="carousel slide" data-ride="carousel" id="carousel-1">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"><img class="img-thumbnail w-100 d-block"
-                                    src="{{ asset('img/1.jpg') }}" alt="Slide Image" loading="lazy"></div>
-                            <div class="carousel-item"><img class="img-thumbnail w-100 d-block"
-                                    src="{{ asset('img/3.jpg') }}" alt="Slide Image"></div>
-                            <div class="carousel-item"><img class="img-thumbnail w-100 d-block"
-                                    src="{{ asset('img/2.jpg') }}" alt="Slide Image"></div>
-                        </div>
-                        <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span
-                                    class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a
-                                class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><span
-                                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-1" data-slide-to="1"></li>
-                            <li data-target="#carousel-1" data-slide-to="2"></li>
-                        </ol>
+
+            <article class="postcard light blue">
+                <a class="postcard__img_link" >
+                    @foreach ( $img2 as $item )
+                    <img style="text-align: center" class="postcard__img" src="{{ asset('/images/projects/' . $item->img) }}" alt="Image Title" />
+                    @endforeach
+
+                </a>
+                <div class="postcard__text t-dark">
+                    <h1 class="postcard__title blue"><a >{{$p1->name}}</a></h1>
+                    <div class="postcard__subtitle small">
                     </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">{{$p1->description}}</div>
+                    <ul class="postcard__tagbox">
+                    </ul>
                 </div>
-                <div class="col-md-12">
-                    <h4>{{ $p1->name }}</h4>
-                    <div class="mt-3"><button class="btn btn-primary" type="button">Liên hệ để được tư vẫn và hỗ
-                            trợ</button></div>
-                    <hr>
-                    <div class="d-flex flex-row">
-                        {{-- <div class="icons mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div><span>1200 ratings &amp; 564 reviews</span> --}}
-                    </div>
-                    <div class="d-flex align-items-center"></i><span class="ml-1">{!! $p1->description !!}<br></span></div>
-                    <hr>
-                </div>
+            </article>
             @endforeach
         </div>
-    @endsection
+    </section>
+
+
+
+		    <div class="container">
+		      	<div class="row">
+                    @foreach ($img as $item)
+					<div class="col-12 col-md-4 col-lg-3 mb-5">
+						<a class="product-item" >
+							<img style="height: 100%" src="{{ asset('/images/projects/' . $item->img) }}" class="img-fluid product-thumbnail"  >
+						</a>
+					</div>
+                    @endforeach
+                </div>
+            </div>
+
+
+
+@endsection

@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('description');
+            $table->longText('description')->nullable(true);
+            $table->string('image',255)->nullable(true);
             $table->integer('status');
             $table->softDeletes();
             $table->timestamps();

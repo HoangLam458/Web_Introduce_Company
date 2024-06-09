@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::table('products', function (Blueprint $table) {
             $table->foreignId('product_type_id')->constrained();
         });
-
+        Schema::table('project_imgs', function (Blueprint $table) {
+            $table->foreignId('projects_id')->constrained();
+        });
     }
 
     /**

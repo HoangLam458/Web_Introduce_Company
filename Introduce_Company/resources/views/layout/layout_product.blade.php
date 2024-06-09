@@ -36,16 +36,16 @@
 							<a class="nav-link " href="{{route('home')}}">Home</a>
 						</li>
 						<li class="nav-item active"><a class="nav-link" href="{{route('product')}}">Sản phẩm</a></li>
-						<li><a class="nav-link" href="{{route('projects')}}">Dự án</a></li>
-						<li><a class="nav-link" href="{{route('services')}}">Dịch vụ</a></li>
-						<li><a class="nav-link" href="blog.html">Blog</a></li>
-						<li><a class="nav-link" href="{{route('contacts')}}">Liên hệ</a></li>
+						<li><a class="nav-link" href="{{route('projects')}}">Vật liệu xây dựng</a></li>
+						<li><a class="nav-link" href="{{route('services')}}">Nội thất</a></li>
+                        <li><a class="nav-link" href="{{route('projects')}}">Vật liệu xây dựng</a></li>
+
 					</ul>
 
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					{{-- <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 						<li><a class="nav-link" href="#"><img src="{{asset('Theme_css/images/user.svg')}}"></a></li>
 						<li><a class="nav-link" href="cart.html"><img src="{{asset('Theme_css/images/cart.svg')}}"></a></li>
-					</ul>
+					</ul> --}}
 				</div>
 			</div>
 
@@ -61,92 +61,106 @@
 
 		<!-- Start Footer Section -->
         <hr>
-		<footer class="footer-section">
-			<div class="container relative">
+        <footer class="footer-section">
+            <div class="container relative">
 
-				<div class="sofa-img">
-					{{-- <img src="{{asset('Theme_css/images/sofa.png')}}" alt="Image" class="img-fluid"> --}}
-				</div>
+                <div class="sofa-img">
+                    {{-- <img src="{{asset('Theme_css/images/sofa.png')}}" alt="Image" class="img-fluid"> --}}
+                </div>
 
-				<div class="row">
-					<div class="col-lg-8">
-						<div class="subscription-form">
-							<h3 class="d-flex align-items-center"><span class="me-1"><img src="{{asset('Theme_css/images/envelope-outline.svg')}}" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="subscription-form">
+                            <h3 class="d-flex align-items-center"><span class="me-1"><img
+                                        src="{{ asset('Theme_css/images/envelope-outline.svg') }}" alt="Image"
+                                        class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
-							<form action="#" class="row g-3">
-								<div class="col-auto">
-									<input type="text" class="form-control" placeholder="Enter your name">
-								</div>
-								<div class="col-auto">
-									<input type="email" class="form-control" placeholder="Enter your email">
-								</div>
-								<div class="col-auto">
-									<button class="btn btn-primary">
-										<span class="fa fa-paper-plane"></span>
-									</button>
-								</div>
-							</form>
+                            <form action="#" class="row g-3">
+                                <div class="col-auto">
+                                    <input type="text" class="form-control" placeholder="Enter your name">
+                                </div>
+                                <div class="col-auto">
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary">
+                                        <span class="fa fa-paper-plane"></span>
+                                    </button>
+                                </div>
+                            </form>
 
-						</div>
-					</div>
-				</div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="row g-5 mb-5">
-					<div class="col-lg-4">
-						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Furni<span>.</span></a></div>
-						<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant</p>
+                <div class="row g-5 mb-5">
+                    <div class="col-lg-4">
+                        <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">TMC Group<span>.</span></a>
+                        </div>
+                        <p class="mb-4">
+                            TMC Group là một tập đoàn đa ngành hoạt động chủ yếu trong lĩnh vực xây dựng và nội thất tại
+                            Việt Nam. Chúng tôi tự hào là đối tác tin cậy của hàng nghìn khách hàng, cung cấp các dịch vụ và
+                            sản phẩm chất lượng cao, đa dạng và đáp ứng được mọi nhu cầu của khách hàng.
 
-						<ul class="list-unstyled custom-social">
-							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-						</ul>
-					</div>
+                            <br>Với một đội ngũ chuyên nghiệp, giàu kinh nghiệm và tâm huyết, TMC Group không chỉ tập trung
+                            vào việc xây dựng các công trình chất lượng, mà còn chú trọng vào việc tạo ra không gian sống và
+                            làm việc hoàn hảo nhất cho khách hàng. Chúng tôi không ngừng nỗ lực để đổi mới, áp dụng công
+                            nghệ tiên tiến nhất và tiêu chuẩn quản lý hiện đại nhất để mang lại giá trị tốt nhất cho mỗi dự
+                            án.
 
-					<div class="col-lg-8">
-						<div class="row links-wrap">
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li><a href="#">About us</a></li>
-									<li><a href="#">Services</a></li>
-									<li><a href="#">Blog</a></li>
-									<li><a href="#">Contact us</a></li>
-								</ul>
-							</div>
+                            <br>Mục tiêu phát triển của chúng tôi không chỉ dừng lại ở việc trở thành một trong những tập
+                            đoàn hàng đầu trong lĩnh vực xây dựng và nội thất tại Việt Nam, mà còn là một đối tác đáng tin
+                            cậy và phát triển bền vững trong cộng đồng và toàn cầu.
+                        </p>
 
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li><a href="#">Support</a></li>
-									<li><a href="#">Knowledge base</a></li>
-									<li><a href="#">Live chat</a></li>
-								</ul>
-							</div>
+                        <ul class="list-unstyled custom-social">
+                            <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                            <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                        </ul>
+                    </div>
 
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li><a href="#">Jobs</a></li>
-									<li><a href="#">Our team</a></li>
-									<li><a href="#">Leadership</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-								</ul>
-							</div>
+                    <div class="col-lg-8">
+                        <div class="row links-wrap">
+                            <div class="col-6 col-sm-6 col-md-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contact us</a></li>
+                                </ul>
+                            </div>
 
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li><a href="#">Nordic Chair</a></li>
-									<li><a href="#">Kruzo Aero</a></li>
-									<li><a href="#">Ergonomic Chair</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+                            <div class="col-6 col-sm-6 col-md-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Support</a></li>
+                                    <li><a href="#">Knowledge base</a></li>
+                                    <li><a href="#">Live chat</a></li>
+                                </ul>
+                            </div>
 
-				</div>
+                            <div class="col-6 col-sm-6 col-md-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Jobs</a></li>
+                                    <li><a href="#">Our team</a></li>
+                                    <li><a href="#">Leadership</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
 
-
-			</div>
-		</footer>
+                            <div class="col-6 col-sm-6 col-md-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Nordic Chair</a></li>
+                                    <li><a href="#">Kruzo Aero</a></li>
+                                    <li><a href="#">Ergonomic Chair</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 		<!-- End Footer Section -->
 
 		<script src="{{asset('Theme_css/js/bootstrap.bundle.min.js')}}"></script>

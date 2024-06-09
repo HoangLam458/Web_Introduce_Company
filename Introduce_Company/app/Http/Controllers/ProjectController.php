@@ -26,7 +26,10 @@ class ProjectController extends Controller
     public function show($id)
     {
         $products1 = DB::table("projects")->where("id","=",$id)->get();
-        return view('pages.projects.projects_show',['pr1'=>$products1]);
+        $img = DB::table("project_imgs")->where("projects_id","=",$id)->get();
+        $img2 = DB::table("project_imgs")->where("projects_id","=",$id)->get()->random(1);
+
+        return view('pages.projects.projects_show',['pr1'=>$products1, 'img' =>$img, 'img2' =>$img2]);
     }
     public function create(StoreProjectRequest $request)
     {
