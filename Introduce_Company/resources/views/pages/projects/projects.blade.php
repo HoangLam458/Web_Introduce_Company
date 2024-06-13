@@ -391,7 +391,7 @@
             @foreach ($pr1 as $p1)
             <article class="postcard light blue">
                 <a class="postcard__img_link" href="{{ route('project.show', $p1->id) }}">
-                    <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+                    <img class="postcard__img" src="{{$p1->image}}" alt="Image Title" />
                 </a>
                 <div class="postcard__text t-dark">
                     <h1 class="postcard__title blue"><a href="{{ route('project.show', $p1->id) }}">{{$p1->name}}</a></h1>
@@ -403,7 +403,7 @@
                         {{-- <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
                         <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li> --}}
                         <li class="tag__item play blue">
-                            <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                            <a href="{{ route('project.show', $p1->id) }}"><i class="fas fa-play mr-2"></i>Xem thêm...</a>
                         </li>
                     </ul>
                 </div>

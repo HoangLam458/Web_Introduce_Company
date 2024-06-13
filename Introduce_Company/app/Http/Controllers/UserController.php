@@ -18,9 +18,12 @@ class UserController extends Controller
     public function homepage()
     {
         $project = DB::table("projects")->get()->random(3);
+        $product = DB::table("products")->get()->random(3);
         $service = DB::table("services")->get()->random();
         return view('pages.index',[
-            'project'=>$project,'service'=>$service
+            'project'=>$project,
+            'service'=>$service,
+            'product'=>$product
         ]);
     }
 

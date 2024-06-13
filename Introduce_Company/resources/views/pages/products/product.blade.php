@@ -3,288 +3,239 @@
 
     <head>
         <style type="text/css">
-            /*panel*/
-            .panel {
-                border: none;
-                box-shadow: none;
+            a,
+            a:hover {
+                text-decoration: none;
+                color: inherit;
             }
 
-            .panel-heading {
-                border-color: #eff2f7;
-                font-size: 16px;
-                font-weight: 300;
+            .section-products {
+                padding: 80px 0 54px;
             }
 
-            .panel-title {
-                color: #2A3542;
-                font-size: 14px;
+            .section-products .header {
+                margin-bottom: 50px;
+            }
+
+            .section-products .header h3 {
+                font-size: 1rem;
+                color: #fe302f;
+                font-weight: 500;
+            }
+
+            .section-products .header h2 {
+                font-size: 2.2rem;
                 font-weight: 400;
-                margin-bottom: 0;
-                margin-top: 0;
-                font-family: 'Open Sans', sans-serif;
+                color: #444444;
             }
 
-
-            /*product list*/
-
-            .prod-cat li a {
-                border-bottom: 1px dashed #d9d9d9;
+            .section-products .single-product {
+                margin-bottom: 26px;
             }
 
-            .prod-cat li a {
-                color: #3b3b3b;
-            }
-
-            .prod-cat li ul {
-                margin-left: 30px;
-            }
-
-            .prod-cat li ul li a {
-                border-bottom: none;
-            }
-
-            .prod-cat li ul li a:hover,
-            .prod-cat li ul li a:focus,
-            .prod-cat li ul li.active a,
-            .prod-cat li a:hover,
-            .prod-cat li a:focus,
-            .prod-cat li a.active {
-                background: none;
-                color: #ff7261;
-            }
-
-            .pro-lab {
-                margin-right: 20px;
-                font-weight: normal;
-            }
-
-            .pro-sort {
-                padding-right: 20px;
-                float: left;
-            }
-
-            .pro-page-list {
-                margin: 5px 0 0 0;
-            }
-
-            .product-list img {
-                width: 100%;
-                border-radius: 4px 4px 0 0;
-                -webkit-border-radius: 4px 4px 0 0;
-            }
-
-            .product-list .pro-img-box {
+            .section-products .single-product .part-1 {
                 position: relative;
+                height: 290px;
+                max-height: 290px;
+                margin-bottom: 20px;
+                overflow: hidden;
             }
 
-            .adtocart {
-                background: #fc5959;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                -webkit-border-radius: 50%;
-                color: #fff;
-                display: inline-block;
-                text-align: center;
-                border: 3px solid #fff;
-                left: 45%;
-                bottom: -25px;
+            .section-products .single-product .part-1::before {
                 position: absolute;
-            }
-
-            .adtocart i {
-                color: #fff;
-                font-size: 25px;
-                line-height: 42px;
-            }
-
-            .pro-title {
-                color: #5A5A5A;
-                display: inline-block;
-                margin-top: 20px;
-                font-size: 16px;
-            }
-
-            .product-list .price {
-                color: #fc5959;
-                font-size: 15px;
-            }
-
-            .pro-img-details {
-                margin-left: -15px;
-            }
-
-            .pro-img-details img {
+                content: "";
+                top: 0;
+                left: 0;
                 width: 100%;
+                height: 100%;
+                z-index: -1;
+                transition: all 0.3s;
             }
 
-            .pro-d-title {
-                font-size: 16px;
-                margin-top: 0;
+            .section-products .single-product:hover .part-1::before {
+                transform: scale(1.2, 1.2) rotate(5deg);
             }
 
-            .product_meta {
-                border-top: 1px solid #eee;
-                border-bottom: 1px solid #eee;
-                padding: 10px 0;
-                margin: 15px 0;
+            .section-products #product-1 .part-1::before {
+                background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+                background-size: cover;
+                transition: all 0.3s;
             }
 
-            .product_meta span {
-                display: block;
-                margin-bottom: 10px;
+
+
+            .section-products .single-product .part-1 .discount,
+            .section-products .single-product .part-1 .new {
+                position: absolute;
+                top: 15px;
+                left: 20px;
+                color: #ffffff;
+                background-color: #fe302f;
+                padding: 2px 8px;
+                text-transform: uppercase;
+                font-size: 0.85rem;
             }
 
-            .product_meta a,
-            .pro-price {
-                color: #fc5959;
+            .section-products .single-product .part-1 .new {
+                left: 0;
+                background-color: #444444;
             }
 
-            .pro-price,
-            .amount-old {
-                font-size: 18px;
-                padding: 0 10px;
+            .section-products .single-product .part-1 ul {
+                position: absolute;
+                bottom: -41px;
+                left: 20px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                opacity: 0;
+                transition: bottom 0.5s, opacity 0.5s;
             }
 
-            .amount-old {
-                text-decoration: line-through;
+            .section-products .single-product:hover .part-1 ul {
+                bottom: 30px;
+                opacity: 1;
             }
 
-            .quantity {
-                width: 120px;
-            }
-
-            .pro-img-list {
-                margin: 10px 0 0 -15px;
-                width: 100%;
+            .section-products .single-product .part-1 ul li {
                 display: inline-block;
+                margin-right: 4px;
             }
 
-            .pro-img-list a {
-                float: left;
-                margin-right: 10px;
-                margin-bottom: 10px;
+            .section-products .single-product .part-1 ul li a {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                background-color: #ffffff;
+                color: #444444;
+                text-align: center;
+                box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
+                transition: color 0.2s;
             }
 
-            .pro-d-head {
-                font-size: 18px;
-                font-weight: 300;
+            .section-products .single-product .part-1 ul li a:hover {
+                color: #fe302f;
+            }
+
+            .section-products .single-product .part-2 .product-title {
+                font-size: 1rem;
+            }
+
+            .section-products .single-product .part-2 h4 {
+                display: inline-block;
+                font-size: 1rem;
+            }
+
+            .section-products .single-product .part-2 .product-old-price {
+                position: relative;
+                padding: 0 7px;
+                margin-right: 2px;
+                opacity: 0.6;
+            }
+
+            .section-products .single-product .part-2 .product-old-price::after {
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #444444;
+                transform: translateY(-50%);
+            }
+
+            .fill {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden
+            }
+
+            .fill img {
+                flex-shrink: 0;
+                min-width: 100%;
+                min-height: 100%
             }
         </style>
     </head>
-
-    <div class="container" style="margin-top: 20px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <section class="panel">
-                        <div class="panel-body">
-                            <input type="text" placeholder="Keyword Search" class="form-control" />
-                        </div>
-                    </section>
-                    <section class="panel">
-                        <header class="panel-heading">
-                            Loại Sản Phẩm
-                        </header>
-                        <div class="panel-body">
-                            <ul class="nav prod-cat">
-                                <li>
-                                    <a href="#"><i class="fa fa-angle-right"></i> Vật liệu xây dựng </a>
-                                    <ul class="nav">
-                                        @foreach ($type1 as $item)
-                                            <li><a href="#">- {{ $item->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-angle-right"></i> Nội thất </a>
-                                    <ul class="nav">
-                                        @foreach ($type2 as $item)
-                                            <li><a href="#">- {{ $item->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </section>
-                    <section class="panel">
-                        <header class="panel-heading">
-                            Price Range
-                        </header>
-                        <div class="panel-body sliders">
-                            <div id="slider-range" class="slider"></div>
-                            <div class="slider-info">
-                                <span id="slider-range-amount"></span>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="panel">
-                        <header class="panel-heading">
-                            Bán chạy
-                        </header>
-                        <div class="panel-body">
-                            <div class="best-seller">
-                                @foreach ($pr2 as $item)
-                                    <article class="media">
-                                        <a class="pull-left thumb p-thumb">
-                                            <img src="{{ asset('/images/products/' . $item->img) }}" height="250px"
-                                                width="220px" />
-                                        </a>
-                                        <div class="media-body">
-                                            <a href="{{ route('show', $item->id) }}" class="p-head">{{ $item->name }}</a>
-                                        </div>
-                                    </article>
-                                @endforeach
-
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-md-9">
-                    {{-- <section class="panel">
-                    <div class="panel-body">
-                        <div class="pull-right">
-                            <ul class="pagination pagination-sm pro-page-list">
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">»</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section> --}}
-                    <div class="row product-list">
-                        @foreach ($pr1 as $item)
-                            <div class="col-md-4">
-                                <section class="panel">
-                                    <div class="pro-img-box">
-                                        <a href="{{ route('show', $item->id) }}" class="pro-title">
-                                            <img  src="{{ asset('/images/products/' . $item->img) }}"
-
-                                            height="200px" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="panel-body text-center">
-                                        <h4>
-                                            <a href="{{ route('show', $item->id) }}" class="pro-title">
-                                                {{ $item->name }}
-                                            </a>
-                                        </h4>
-                                        @if ($item->price > 0)
-                                            <p class="price">{{ number_format($item->price) }} VND</p>
-                                        @else
-                                            <p class="price">Liên hệ</p>
-                                        @endif
-
-                                    </div>
-                                </section>
-                            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-lg-0 mb-2" style="margin-top: 80px">
+                <p>
+                    <a class="btn btn-primary w-100 d-flex align-items-center justify-content-between"
+                        data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+                        aria-controls="collapseExample">
+                        <span class="fas fa-bars"><span class="ps-3" style="font-family:'Times New Roman', Times, serif; text-transform: uppercase; ">Vật liệu xây dựng</span></span>
+                        <span class="fas fa-chevron-down"></span>
+                    </a>
+                </p>
+                <div class="collapse show border" id="collapseExample">
+                    <ul class="list-unstyled">
+                        @foreach ($type1 as $item)
+                        <li><a class="dropdown-item" href="{{route('list',$item->id)}}">{{$item->name}}</a></li>
                         @endforeach
 
-                    </div>
+
+                    </ul>
+                </div>
+                <div>
+                    &nbsp;
+                </div>
+                <p>
+                    <a class="btn btn-primary w-100 d-flex align-items-center justify-content-between"
+                        data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true"
+                        aria-controls="collapseExample1">
+                        <span class="fas fa-bars"><span class="ps-3" style="font-family:'Times New Roman', Times, serif; text-transform: uppercase;">Nội thất</span></span>
+                        <span class="fas fa-chevron-down"></span>
+                    </a>
+                </p>
+                <div class="collapse show border" id="collapseExample1">
+                    <ul class="list-unstyled">
+                        @foreach ($type2 as $item)
+                        <li><a class="dropdown-item" href="{{route('list',$item->id)}}">{{$item->name}}</a></li>
+                        @endforeach
+
+                    </ul>
                 </div>
             </div>
+            <div class="col-lg-9 mb-lg-0 mb-2">
+                <section class="section-products">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Single Product -->
+                            @foreach ($pr1 as $item)
+                                <div class="col-md-12 col-lg col-xl-4">
+                                    <div id="product-1" class="single-product">
+                                        <div class="part-1">
+                                            <div class="fill">
+                                                <a href="{{route('show',$item->id)}}"> <img  src="{{ asset('/images/products/' . $item->img) }}" alt=""></a>
+                                            </div>
+                                            <ul>
+                                                {{-- <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-plus"></i></a></li> --}}
+                                                <li><a href="{{route('show',$item->id)}}"><i class="fas fa-expand"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="part-2">
+                                            <a style="color: #444444" class="product-title" href="{{route('show',$item->id)}}">{{$item->name}}</a><br>
+                                            @if ($item->price == 0)
+                                            <h4 class="product-price" style="color: #fe302f">Liên hệ</h4>
+                                            @else
+                                            <h4 class="product-price" style="color: #1ca6dd">{{ number_format($item->price) }} VND</h4>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <!-- Single Product -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
         </div>
     </div>
 @endsection

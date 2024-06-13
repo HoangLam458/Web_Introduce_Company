@@ -112,12 +112,7 @@
                             cậy và phát triển bền vững trong cộng đồng và toàn cầu.
                         </p>
 
-                        <ul class="list-unstyled custom-social">
-                            <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-                            <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-                            <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-                        </ul>
+                        
                     </div>
 
                     <div class="col-lg-8">

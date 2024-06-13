@@ -32,24 +32,24 @@
             cursor: pointer;
         }
     </style>
-     <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Quét QR để liên hệ trực tiếp </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Quét QR để liên hệ trực tiếp </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ asset('Theme_css/images/qr.png') }}" class="img-fluid">
+                </div>
+
+            </div>
         </div>
-        <div class="modal-body">
-            <img src="{{ asset('Theme_css/images/qr.png') }}" class="img-fluid">
-        </div>
-
-      </div>
     </div>
-  </div>
 
     <div class="hero">
         <div class="container">
@@ -62,9 +62,10 @@
                             sư, kỹ sư và nhà thiết kế tài năng, TMC IV IV IV cam kết mang đến những công trình chất lượng
                             cao, thẩm mỹ và bền vững.</p>
                         <p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
                                 Hãy kết nối với chúng tôi , cùng chia sẻ lợi nhuận
-                              </button>
+                            </button>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -76,64 +77,40 @@
         </div>
     </div>
 
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="{{ asset('img/1.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('img/2.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('img/3.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('img/4.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-    <div class="product-section">
-        <div class="container">
-            <div class="row">
-
-                <!-- Start Column 1 -->
-                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-                    <h2 class="mb-4 section-title">DỰ ÁN TIÊU BIỂU</h2>
-                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                        vulputate velit imperdiet dolor tempor tristique. </p>
-                    <p><a href="shop.html" class="btn">Xem thêm...</a></p>
-                </div>
-                <!-- End Column 1 -->
-
-                <!-- Start Column 2 -->
-                @foreach ( $project as $item)
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                    <a class="product-item" href="{{ route('project.show', $item->id) }}" >
-                        <img src="{{ asset($item->image) }}" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">{{$item->name}}</h3>
-                    </a>
-                </div>
-                @endforeach
+    {{-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('img/1.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('img/2.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('img/3.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('img/tayninhoffice.jpg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
-    </div>
-    <!-- End Product Section -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> --}}
 
+    <!-- End Product Section -->
     <!-- Start Why Choose Us Section -->
     <div class="why-choose-section">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-6">
-                    <h2 class="section-title">Tại sao lại chọn chúng tôi</h2>
+                    <h2 class="section-title">Vì sao phải chọn chúng tôi</h2>
+                    <p>Những yếu tố dưới đây giúp công ty Xây dựng & nội thất TMC khẳng định vị thế của mình trên thị trường
+                        và là lựa chọn hàng đầu cho các dự án xây dựng và nội thất.</p>
                     <div class="row my-5">
                         <div class="col-6 col-md-6">
                             <div class="feature">
@@ -301,7 +278,55 @@
             </div>
         </div>
     </div>
+    <div class="product-section">
+        <div class="container">
+            <div class="row">
 
+                <!-- Start Column 1 -->
+                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                    <h2 class="mb-4 section-title">Một số dự án tiêu biểu</h2>
+                    <p class="mb-4"> </p>
+                    <p><a href="shop.html" class="btn">Xem thêm...</a></p>
+                </div>
+                <!-- End Column 1 -->
+
+                <!-- Start Column 2 -->
+                @foreach ($project as $item)
+                    <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                        <a class="product-item" href="{{ route('project.show', $item->id) }}">
+                            <img src="{{ asset($item->image) }}" class="img-fluid product-thumbnail">
+                            <h3 class="product-title">{{ $item->name }}</h3>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <div class="container">
+            <div class="row">
+
+                <!-- Start Column 1 -->
+                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                    <h2 class="mb-4 section-title">Một số sản phẩm tiêu biểu</h2>
+                    <p class="mb-4"> </p>
+                    <p><a href="shop.html" class="btn">Xem thêm...</a></p>
+                </div>
+                <!-- End Column 1 -->
+
+                <!-- Start Column 2 -->
+                @foreach ($product as $item)
+                    <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                        <a class="product-item" href="{{ route('show', $item->id) }}">
+                            <img src="{{ asset('/images/products/' . $item->img) }}" class="img-fluid product-thumbnail">
+                            <h3 class="product-title">{{ $item->name }}</h3>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
     <!-- End We Help Section -->
 
     <!-- Start Popular Product -->
