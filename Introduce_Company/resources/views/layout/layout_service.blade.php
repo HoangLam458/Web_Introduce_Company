@@ -38,13 +38,13 @@
 						<li ><a class="nav-link" href="{{route('product')}}">Sản phẩm</a></li>
 						<li ><a class="nav-link" href="{{route('projects')}}">Dự án</a></li>
 						<li class="nav-item active"><a class="nav-link" href="{{route('services')}}">Dịch vụ</a></li>
-						<li><a class="nav-link" href="blog.html">Blog</a></li>
+
 						<li><a class="nav-link" href="{{route('contacts')}}">Liên hệ</a></li>
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 						<li><a class="nav-link" href="#"><img src="{{asset('Theme_css/images/user.svg')}}"></a></li>
-						<li><a class="nav-link" href="cart.html"><img src="{{asset('Theme_css/images/cart.svg')}}"></a></li>
+						<li><a class="nav-link" href=""><img src="{{asset('Theme_css/images/cart.svg')}}"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -114,7 +114,7 @@
                             cậy và phát triển bền vững trong cộng đồng và toàn cầu.
                         </p>
 
-                      
+
                     </div>
 
                     <div class="col-lg-8">
