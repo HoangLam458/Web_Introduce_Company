@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
-    <link rel="stylesheet" href="./style.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="{{ asset('Theme_css/css/tiny-slider.css') }}" rel="stylesheet">
@@ -38,8 +38,8 @@
 
             <div class="collapse navbar-collapse" id="navbarsFurni">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-                    <li>
-                        <a class="nav-link " href="{{ route('home') }}">Trang chủ</a>
+                    <li >
+                        <a class="nav-link" href="{{ route('home') }}">Trang Chủ</a>
                     </li>
                     <li>
                         <div class="dropdown">
@@ -66,11 +66,12 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item active"><a class="nav-link" href="{{ route('product') }}">Sản phẩm</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{{ route('product') }}">Sản Phẩm</a></li>
                     <li><a class="nav-link" href="{{ route('projects') }}">Dự Án</a></li>
                     <li><a class="nav-link" href="{{ route('services') }}">Dịch Vụ</a></li>
                     <li><a class="nav-link" href="{{ route('contacts') }}">Liên Hệ</a></li>
                 </ul>
+
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                     <li><a class="nav-link" href="#"><img src="{{ asset('Theme_css/images/user.svg') }}"></a>
                     </li>
@@ -119,118 +120,155 @@
                         đoàn hàng đầu trong lĩnh vực xây dựng và nội thất tại Việt Nam, mà còn là một đối tác đáng tin
                         cậy và phát triển bền vững trong cộng đồng và toàn cầu.
                     </p>
-
                 </div>
 
                 <div class="col-lg-8">
-                    <div class="mb-4 footer-logo-wrap"><span></span>
-                        <div class="row links-wrap">
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <ul class="list-unstyled">
-                                    <li><a href="{{ route('product') }}">Sản Phẩm</a></li>
-                                    <li><a href="{{ route('projects') }}">Dự Án</a></li>
-                                    <li><a href="{{ route('services') }}">Dịch Vụ</a></li>
-                                    <li><a href="{{ route('contacts') }}">Liên Hệ</a></li>
-                                </ul>
-                            </div>
+                
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="{{ route('product') }}">Sản Phẩm</a></li>
+                                <li><a href="{{ route('projects') }}">Dự Án</a></li>
+                                <li><a href="{{ route('services') }}">Dịch Vụ</a></li>
+                                <li><a href="{{ route('contacts') }}">Liên Hệ</a></li>
+                            </ul>
+                        </div>
 
-                            <div class="col-6 col-sm-6 col-md-3">
+                        <div class="col-6 col-sm-6 col-md-3">
 
-                                <ul class="list-unstyled">
-                                    <li><a href="#">
-                                            <span> Bất Động Sản </span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span> Thiết Kế - Xây Dựng </span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span> Nội - Ngoại Thất </span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span> Thiết Bị Xây Dựng </span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span> Thiết Kế Quảng Cáo </span>
-                                        </a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 col-sm-6 ">
-                                <div class="subscription-form">
-                                    <h3 class="d-flex align-items-center"><span class="me-1"><img
-                                                src="{{ asset('Theme_css/images/envelope-outline.svg') }}"
-                                                alt="Image" class="img-fluid"></span><span>Biểu Mẫu Liên Hệ</span>
-                                    </h3>
+                            <ul class="list-unstyled">
+                                <li><a  href="#">
+                                    <span > Bất Động Sản </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Kế - Xây Dựng </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Nội - Ngoại Thất </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Bị Xây Dựng </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Kế Quảng Cáo </span>
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-3">
 
-                                    <form action="{{ route('Storecontact') }}" method="Post">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group{{ $errors->has('ht') ? ' has-danger' : '' }}">
-                                                    <label class="text-black">Họ tên</label>
-                                                    <input required type="text" name="ht"
-                                                        class="form-control" placeholder="Your Name *"
-                                                        value="{{ old('ht') }}" maxlength="50" required>
-                                                    @if ($errors->has('em'))
-                                                        <span class="invalid-feedback"
-                                                            style="display: block;font-size:15px" role="alert">
-                                                            {{ $errors->first('em') }}
-                                                        </span>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="form-group{{ $errors->has('em') ? ' has-danger' : '' }}">
-                                                    <label class="text-black">Email</label>
-                                                    <input required type="email"
-                                                        value="{{ old('em') }}"class="form-control"
-                                                        name="em" placeholder="Your Email *" required>
-                                                    @if ($errors->has('em'))
-                                                        <span class="invalid-feedback"
-                                                            style="display: block;font-size:15px" role="alert">
-                                                            {{ $errors->first('em') }}
-                                                        </span>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-group{{ $errors->has('td') ? ' has-danger' : '' }}">
-                                                <label class="text-black">Tiêu đề</label>
-                                                <input type="text" name="td" value="{{ old('td') }}"
-                                                    class="form-control" maxlength="50" minlength="15"
-                                                    placeholder="Title *" required>
-                                                @if ($errors->has('td'))
+                            <ul class="list-unstyled">
+                                <li><a  href="#">
+                                    <span > Bất Động Sản </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Kế - Xây Dựng </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Nội - Ngoại Thất </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Bị Xây Dựng </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Kế Quảng Cáo </span>
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-3">
+
+                            <ul class="list-unstyled">
+                                <li><a  href="#">
+                                    <span > Bất Động Sản </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Kế - Xây Dựng </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Nội - Ngoại Thất </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Bị Xây Dựng </span>
+                                </a></li>
+                            <li><a  href="#">
+                                    <span > Thiết Kế Quảng Cáo </span>
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="">
+                            <div class="subscription-form">
+                                <h3 class="d-flex align-items-center"><span class="me-1"><img
+                                            src="{{ asset('Theme_css/images/envelope-outline.svg') }}" alt="Image"
+                                            class="img-fluid"></span><span>Biểu Mẫu Liên Hệ</span></h3>
+
+                                <form action="{{ route('Storecontact') }}" method="Post">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group{{ $errors->has('ht') ? ' has-danger' : '' }}">
+                                                <label class="text-black" >Họ tên</label>
+                                                <input required type="text" name="ht" class="form-control"
+                                                    placeholder="Your Name *" value="{{ old('ht') }}"
+                                                    maxlength="50" required>
+                                                @if ($errors->has('em'))
                                                     <span class="invalid-feedback"
                                                         style="display: block;font-size:15px" role="alert">
-                                                        {{ $errors->first('td') }}
+                                                        {{ $errors->first('em') }}
                                                     </span>
                                                 @endif
                                             </div>
                                         </div>
-
-                                        <div class="form-group mb-5">
-                                            <div class="form-group{{ $errors->has('nd') ? ' has-danger' : '' }}">
-                                                <label class="text-black">Nội dung</label>
-                                                <textarea name="nd" id="" cols="30" rows="7" class="form-control" minlength="50"
-                                                    placeholder="Messenger *" required>{{ old('nd') }}</textarea>
-                                                @if ($errors->has('nd'))
+                                        <div class="col-6">
+                                            <div class="form-group{{ $errors->has('em') ? ' has-danger' : '' }}">
+                                                <label class="text-black" >Email</label>
+                                                <input required type="email"
+                                                    value="{{ old('em') }}"class="form-control" name="em"
+                                                    placeholder="Your Email *" required>
+                                                @if ($errors->has('em'))
                                                     <span class="invalid-feedback"
                                                         style="display: block;font-size:15px" role="alert">
-                                                        {{ $errors->first('nd') }}
+                                                        {{ $errors->first('em') }}
                                                     </span>
                                                 @endif
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary-hover-outline">Gửi thư liên
-                                            hệ</button>
-                                    </form>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group{{ $errors->has('td') ? ' has-danger' : '' }}">
+                                            <label class="text-black" >Tiêu đề</label>
+                                            <input type="text" name="td" value="{{ old('td') }}"
+                                                class="form-control" maxlength="50" minlength="15"
+                                                placeholder="Title *" required>
+                                            @if ($errors->has('td'))
+                                                <span class="invalid-feedback" style="display: block;font-size:15px"
+                                                    role="alert">
+                                                    {{ $errors->first('td') }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
 
-                                </div>
+                                    <div class="form-group mb-5">
+                                        <div class="form-group{{ $errors->has('nd') ? ' has-danger' : '' }}">
+                                            <label class="text-black" >Nội dung</label>
+                                            <textarea name="nd" id="" cols="30" rows="7" class="form-control" minlength="50"
+                                                placeholder="Messenger *" required>{{ old('nd') }}</textarea>
+                                            @if ($errors->has('nd'))
+                                                <span class="invalid-feedback" style="display: block;font-size:15px"
+                                                    role="alert">
+                                                    {{ $errors->first('nd') }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <button  type="submit" class="btn btn-primary-hover-outline">Gửi thư liên hệ</button>
+                                </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </footer>
     <!-- End Footer Section -->
 

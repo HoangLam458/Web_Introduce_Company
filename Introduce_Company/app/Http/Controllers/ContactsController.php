@@ -80,4 +80,8 @@ class ContactsController extends Controller
     {
         //
     }
+    public function land_page()
+    {
+        return view('pages.lands.index');
+    }
 }

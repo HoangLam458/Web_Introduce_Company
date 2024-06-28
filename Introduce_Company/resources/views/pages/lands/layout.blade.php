@@ -15,7 +15,7 @@
 
     <link href="{{ asset('Theme_css/css/tiny-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('Theme_css/css/style.css') }}" rel="stylesheet">
-    <title>TMC Group</title>
+    <title>TMC - Bất Động Sản</title>
 </head>
 
 <body>
@@ -24,7 +24,8 @@
     <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">TMC Group<span>.</span></a>
+            <a class="navbar-brand" href="{{ route('land') }}">TMC Real Estate<span>.</span>
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
                 aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,34 +35,8 @@
             <div class="collapse navbar-collapse" id="navbarsFurni">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('home') }}">Trang Chủ</a>
+                        <a class="nav-link" href="{{ route('land') }}">Trang Chủ</a>
                     </li>
-                    <li>
-                        <div class="dropdown">
-                            <a class="nav-link" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Phòng Ban
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="{{ route('land') }}">
-                                        <span style="color: black"> Bất Động Sản </span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#">
-                                        <span style="color: black"> Thiết Kế - Xây Dựng </span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#">
-                                        <span style="color: black"> Nội - Ngoại Thất </span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#">
-                                        <span style="color: black"> Thiết Bị Xây Dựng </span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#">
-                                        <span style="color: black"> Thiết Kế Quảng Cáo </span>
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a class="nav-link" href="{{ route('product') }}">Sản Phẩm</a></li>
                     <li><a class="nav-link" href="{{ route('projects') }}">Dự Án</a></li>
                     <li><a class="nav-link" href="{{ route('services') }}">Dịch Vụ</a></li>
                     <li><a class="nav-link" href="{{ route('contacts') }}">Liên Hệ</a></li>
@@ -98,22 +73,10 @@
 
             <div class="row g-5 mb-5">
                 <div class="col-lg-4">
-                    <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">TMC Group<span>.</span></a>
+                    <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">TMC Real Estate<span>.</span></a>
                     </div>
                     <p class="mb-4">
-                        TMC Group là một tập đoàn đa ngành hoạt động chủ yếu trong lĩnh vực xây dựng và nội thất tại
-                        Việt Nam. Chúng tôi tự hào là đối tác tin cậy của hàng nghìn khách hàng, cung cấp các dịch vụ và
-                        sản phẩm chất lượng cao, đa dạng và đáp ứng được mọi nhu cầu của khách hàng.
-
-                        <br>Với một đội ngũ chuyên nghiệp, giàu kinh nghiệm và tâm huyết, TMC Group không chỉ tập trung
-                        vào việc xây dựng các công trình chất lượng, mà còn chú trọng vào việc tạo ra không gian sống và
-                        làm việc hoàn hảo nhất cho khách hàng. Chúng tôi không ngừng nỗ lực để đổi mới, áp dụng công
-                        nghệ tiên tiến nhất và tiêu chuẩn quản lý hiện đại nhất để mang lại giá trị tốt nhất cho mỗi dự
-                        án.
-
-                        <br>Mục tiêu phát triển của chúng tôi không chỉ dừng lại ở việc trở thành một trong những tập
-                        đoàn hàng đầu trong lĩnh vực xây dựng và nội thất tại Việt Nam, mà còn là một đối tác đáng tin
-                        cậy và phát triển bền vững trong cộng đồng và toàn cầu.
+                        Phòng ban Bất động sản của công ty xây dựng TMC IV IV là một đơn vị chuyên nghiệp và có kinh nghiệm trong lĩnh vực môi giới và quản lý bất động sản. Với đội ngũ nhân viên giàu kinh nghiệm và am hiểu sâu sắc về thị trường bất động sản địa phương, chúng tôi cam kết cung cấp các dịch vụ chất lượng nhằm đáp ứng mọi nhu cầu của khách hàng. Chúng tôi luôn đặt sự hài lòng và lợi ích của khách hàng lên hàng đầu, và luôn nỗ lực không ngừng để mang đến những giải pháp và sản phẩm tối ưu nhất.
                     </p>
                 </div>
 

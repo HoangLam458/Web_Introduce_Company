@@ -390,11 +390,11 @@
             <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
             @foreach ($pr1 as $p1)
             <article class="postcard light blue">
-                <a class="postcard__img_link" href="{{ route('project.show', $p1->id) }}">
+                <a class="postcard__img_link" href="{{ route('services.show', $p1->id) }}">
                     <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
                 </a>
                 <div class="postcard__text t-dark">
-                    <h1 class="postcard__title blue"><a href="{{ route('project.show', $p1->id) }}">{{$p1->name}}</a></h1>
+                    <h1 class="postcard__title blue"><a href="{{ route('services.show', $p1->id) }}">{{$p1->name}}</a></h1>
                     {{-- <div class="postcard__subtitle small">
                         <time datetime="2020-05-25 12:00:00">
                             <i class="fas fa-calendar-alt mr-2"></i> Mon, May 25th 2020

@@ -20,19 +20,19 @@ Route::get('/admin', function () {
 Route::get('/about', function () {
     return view('pages.contacts.about');
 })->name('about');
-Route::get('/contacts', function () {
+Route::get('/lien-he', function () {
     return view('pages.contacts.contacts');
 })->name('contacts');
 
-Route::get('/services', [ServiceController::class, 'index'])->name('services');
-Route::get('/services/{id?}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/dich-vu', [ServiceController::class, 'index'])->name('services');
+Route::get('/dich-vu/{id?}', [ServiceController::class, 'show'])->name('services.show');
 
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
-Route::get('/list-project/{id?}', [ProjectController::class, 'show'])->name('project.show');
+Route::get('/du-an', [ProjectController::class, 'index'])->name('projects');
+Route::get('/du-an/{id?}', [ProjectController::class, 'show'])->name('project.show');
 
-Route::get('/product', [ProductController::class, 'index'])->name('product');
-Route::get('/list-product/{id?}', [ProductController::class, 'list'])->name('list');
-Route::get('/show-product/{id?}', [ProductController::class, 'show'])->name('show');
+Route::get('/san-pham', [ProductController::class, 'index'])->name('product');
+Route::get('/san-pham/{id?}', [ProductController::class, 'list'])->name('list');
+Route::get('/chi-tiet-san-pham/{id?}', [ProductController::class, 'show'])->name('show');
 
 Route::post('/contact/store', [ContactsController::class, 'store'])->name('Storecontact');
 
@@ -50,6 +50,30 @@ Route::get('/sendcontact', function(Illuminate\Http\Request $request){
     Session::put('sendct',1); // Neu bang` 1 gui alert gui mail thanh cong
     return redirect()->back()->with('status','Gửi mail liên hệ thành công!');
   })->name('sendcontact');
+// Department
+Route::get('/bat-dong-san', [ContactsController::class, 'land_page'])->name('land');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Auth::routes();
